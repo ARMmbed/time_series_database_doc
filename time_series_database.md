@@ -10,6 +10,19 @@ It guides you through the following tasks:
 
 **TODO**: fill out these explicit steps using  the online IDE
 
+1. Visit [mbed-os-example-client](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-client/).
+1. Click the button "Import into Compiler" in the upper right.
+1. A new browser window opens to the mbed web compiler. Click the "import" button to begin the import process.
+1. Visit [connector.mbed.com](https://connector.mbed.com/#home)
+1. Login and click the "Security credentials" link.
+1. Click the "Get my device security credentials" button.
+1. Select the text that displays, and copy it.
+1. Go back to the mbed web compiler and click on the file `security.h`.
+1. Delete the existing text and paste the text you copied.
+1. Click the "Save" button near the top and the "Compile" button near the top.
+1. After compilation suceeds a file is downloaded automatically: `mbed-os-example-client_K64F.bin`.
+1. Drag-and-drop this file to the disk for your mbed device.
+
 Follow the [mbed-os-example-client](https://github.com/ARMmbed/mbed-os-example-client) to get data from a device into mbed Connector.
 
 # Pick a Time Series Platform
