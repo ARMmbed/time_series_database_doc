@@ -39,7 +39,7 @@ Here's how to get time series data into AWS.
 1. [Configure the API Gateway](#)
 1. [Create the API Gateway Lambda function](#)
 
-![](aws_flow.svg)
+![](time_series_database-aws_flow.svg)
 
 ## Setup IAM Role
 
@@ -52,7 +52,56 @@ Here's how to get time series data into AWS.
 
 ## Create the API Gateway Lambda function
 
-**TODO**: finish me
+1. Go to the lambda service in the AWS console
+1. Create a new lambda function
+    * Runtime: Python 2.7
+    * Template: Blank Function
+    * Trigger: none (just click "Next")
+    * Name: `mbed_time_series_webhook`
+    * Code:
+ 
+    ```python
+    from __future__ import print_function
+    import datetime
+    import json
+    import base64
+    
+    import boto3
+    
+    
+    default_dynamodb = boto3.resource(service_name='dynamodb',
+                                      region_name='us-east-1')
+    
+    def update_dynamo_event_counter(tableName, endpoint, hour, event_count=1,
+                                    dynamodb=default_dynamodb):
+            table = dynamodb.Table(tableName)
+            response = table.update_item(
+            Key={
+                'Endpoint': endpoint,
+                'EventHour': hour,
+            },
+            ExpressionAttributeValues={":value":event_count},
+            UpdateExpression="ADD EventCount :value")
+    
+    
+    def lambda_handler(event, context):
+        print("Received event: %r" % event)
+        if 'notifications' in event:
+            for notification in event['notifications']:
+                if notification['path'] == '/3200/0/5501':
+                        button_press_count = base64.b64decode(
+                            notification['payload'])
+                        print ('endpoint: %r button press count: %r' % (
+                            notification['ep'], button_press_count))
+                        now = datetime.datetime.now()
+                        hour = str(now).split(':', 1)[0]+':00:00'
+                        update_dynamo_event_counter(
+                            'mbed_connector_button_presses',
+                            notification['ep'], hour)
+    ```
+    * Existing Role: `mbed_time_series_database`
+
+**TODO**: add a screenshot here of the finished Lambda function screen
 
 ## Configure the API Gateway
 
@@ -62,21 +111,108 @@ Here's how to get time series data into AWS.
 1. Create a GET method
     * Integration type should be `Mock`
     * Add a method response that returns 200
+1. Create a PUT method
+    * Integration type should be `Lambda`
+    * Lambda function: `mbed_time_series_webhook`
+1. Click on `Stages` -> `webhook` -> `PUT` to see the URL to use as the webhook callback below.
+ 
+**TODO**: Create a metric of securing the webhook(API keys?)
 
-**TODO**: finish me
-
-## Setup DynamoDB Table
-
-**TODO**: finish me
-
-## Create the DynamoDB Lambda function
-
-**TODO**: finish me
-
-## Setup the CloudWatch Dashboard
-
-**TODO**: finish me
+**TODO**: add a screenshot here of the finished API Gateway screen
 
 ## Register webhook callback
 
-**TODO**: finish me
+1. Register the webhook callback URL by running: `curl -s -H "Authorization: Bearer yourauthtoken" -H "Content-Type: application/json" -X PUT --data '{"url": "https://myapidomain.amazonaws.com/test/webhook"}' "https://api.connector.mbed.com/v2/notification/callback"` 
+1. Subscribe to button presses by running: `curl -s -H "Authorization: Bearer yourauthtoken" -X PUT "https://api.connector.mbed.com/v2/subscriptions/yourendpointid/3200/0/5501/"`
+
+## Setup DynamoDB Table
+
+1. Go to the DynamoDB service in the AWS console.
+1. Click `Create Table`
+    * Name: `mbed_connector_button_presses`
+    * Primary Partition Key: Endpoint(String)
+    * Add Sort Key: yes
+    * Sort Key: EventHour(String)
+
+**TODO**: add a screenshot here of the finished DynamoDB screen
+
+## Create the DynamoDB Lambda function
+
+1. Go to the lambda service in the AWS console
+1. Create a new lambda function
+    * Runtime: Python 2.7
+    * Template: Blank Function
+    * Trigger: none (just click "Next")
+    * Name: `mbed_time_series_dynamodb`
+    * Code:
+ 
+    ```python
+    import json
+    import boto3
+    from datetime import datetime
+    from collections import defaultdict
+
+    default_cwc = boto3.client('cloudwatch', region_name='us-east-1')
+    
+    def put_cloudwatch_metric(endpoint, hour, event_count=1, cwc=default_cwc):
+        try:
+            timestamp = datetime.strptime(hour, '%Y-%m-%d %H:%M:%S')
+        except ValueError:
+            return
+        metricData=[{
+                'MetricName': endpoint,
+                'Timestamp': timestamp,
+                'Value': event_count,
+                'Unit': 'Count'
+            },]
+        response = cwc.put_metric_data(
+	          Namespace="MbedButtonPressHour", MetricData=metricData)
+
+    def lambda_handler(event, context):
+        hour_event_counter = defaultdict(int)
+        for record in event['Records']:
+            try: endpoint = record['dynamodb']['NewImage']['Endpoint']['S']
+            except Exception as e:
+                endpoint='NULL'
+            try: hour = record['dynamodb']['NewImage']['EventHour']['S']
+            except Exception as e:
+                hour='NULL'
+            try:
+                event_count_old=int(
+                    record['dynamodb']['OldImage']['EventCount']['N'])
+            except Exception as e:
+                event_count_old=0
+            try:
+                event_count_new=int(
+                    record['dynamodb']['NewImage']['EventCount']['N'])
+            except Exception as e:
+                event_count_new=0
+
+            if endpoint != 'NULL' and hour != 'NULL':
+                if(event_count_new > event_count_old):
+                    counter_diff = event_count_new - event_count_old
+                    hour_event_counter[(endpoint, hour)] += counter_diff
+
+        for key,val in hour_event_counter.iteritems():
+            print "%s, %s = %d" % (key[0], key[1], val)
+            put_cloudwatch_metric(key[0], key[1], int(val))
+        return 'Successfully processed {} records'.format(len(event['Records']))
+
+    ```
+    * Existing Role: `mbed_time_series_database`
+
+**TODO**: add a screenshot here of the finished Lambda function screen
+
+## Setup the CloudWatch Dashboard
+
+At this point, press the button on your device a few times.  This will push data
+into the system.
+
+1. Go to CloudWatch in the AWS console
+1. Click on `Browse Metrics`
+1. Click on `MbedButtonPressHour` under Custom Namespaces
+1. Click on Metrics with no dimensions
+1. Select your endpoint ID
+1. Click on Graphed Metrics
+1. Under the Statistic column, select Sum
+1. You should see your data in the graph
