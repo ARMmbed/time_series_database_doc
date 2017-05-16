@@ -72,9 +72,46 @@ Here's how to get time series data into Amazon Web Services (AWS).
 
 ![](time_series_database-aws_flow.svg)
 
+## Setup DynamoDB Table
+
+1. Go to the DynamoDB service in the AWS console.
+1. Click `Create Table`
+    * Name: `mbed_connector_button_presses`
+    * Primary Partition Key: Endpoint(String)
+    * Add Sort Key: yes
+    * Sort Key: EventHour(String)
+
+Use the ARN of the DynamoDB table to create the IAM Role below.
+
+**TODO**: add a screenshot here of the finished DynamoDB screen
+
 ## Setup IAM Role
 
 1. Go to the IAM service in the AWS console
+1. Click `Policies`
+1. Click `Create a policy`
+1. Click `Create Your Own Policy`
+   * Policy Name: `AWSLambdaMicroserviceExecutionRole`
+   * Policy Document:
+
+    ```json
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Action": [
+                    "dynamodb:DeleteItem",
+                    "dynamodb:GetItem",
+                    "dynamodb:PutItem",
+                    "dynamodb:Scan",
+                    "dynamodb:UpdateItem"
+                ],
+                "Resource": "[your_dynamodb_arn]"
+            }
+        ]
+    }
+    ```
 1. Create a new role called `mbed_time_series_database`
 1. Attach the `AWSLambdaBasicExecutionRole` policy
 1. Attach the `AWSLambdaMicroserviceExecutionRole` policy
@@ -143,17 +180,6 @@ Here's how to get time series data into Amazon Web Services (AWS).
 
 1. Register the webhook callback URL by running: `curl -s -H "Authorization: Bearer yourauthtoken" -H "Content-Type: application/json" -X PUT --data '{"url": "https://myapidomain.amazonaws.com/test/webhook"}' "https://api.connector.mbed.com/v2/notification/callback"` 
 1. Subscribe to button presses by running: `curl -s -H "Authorization: Bearer yourauthtoken" -X PUT "https://api.connector.mbed.com/v2/subscriptions/yourendpointid/3200/0/5501/"`
-
-## Setup DynamoDB Table
-
-1. Go to the DynamoDB service in the AWS console.
-1. Click `Create Table`
-    * Name: `mbed_connector_button_presses`
-    * Primary Partition Key: Endpoint(String)
-    * Add Sort Key: yes
-    * Sort Key: EventHour(String)
-
-**TODO**: add a screenshot here of the finished DynamoDB screen
 
 ## Create the DynamoDB Lambda function
 
