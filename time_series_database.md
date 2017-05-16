@@ -6,9 +6,9 @@ It guides you through the following tasks:
 
 **TODO**: fill out these explicit steps.  Maybe they're the same as below?
 
-# mbed Connector
+# mbed Device Setup
 
-**TODO**: fill out these explicit steps using  the online IDE
+The steps here will use the mbed web-combiler. This will load an operating system onto your mbed device so that it can upload data every time a button is pressed. This uses version pre-1.0 of mbed connector.
 
 1. Visit [mbed-os-example-client](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-client/).
 1. Click the button "Import into Compiler" in the upper right.
