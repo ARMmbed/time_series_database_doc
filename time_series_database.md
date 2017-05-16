@@ -8,7 +8,7 @@ It guides you through the following tasks:
 
 # mbed Device Setup
 
-The steps here will use the mbed web-combiler. This will load an operating system onto your mbed device so that it can upload data every time a button is pressed. This uses version pre-1.0 of mbed connector.
+The steps here will use the mbed web-compiler. This will load an operating system onto your mbed device so that it can upload data every time a button is pressed. This uses version pre-1.0 of mbed connector.
 
 1. Visit [mbed-os-example-client](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-client/).
 1. Click the button "Import into Compiler" in the upper right.
@@ -20,7 +20,7 @@ The steps here will use the mbed web-combiler. This will load an operating syste
 1. Go back to the mbed web compiler and click on the file `security.h`.
 1. Delete the existing text and paste the text you copied.
 1. Click the "Save" button near the top and the "Compile" button near the top.
-1. After compilation suceeds a file is downloaded automatically: `mbed-os-example-client_K64F.bin`.
+1. After compilation succeeds a file is downloaded automatically: `mbed-os-example-client_K64F.bin`.
 1. Drag-and-drop this file to the disk for your mbed device.
 
 Follow the [mbed-os-example-client](https://github.com/ARMmbed/mbed-os-example-client) to get data from a device into mbed Connector.
@@ -56,7 +56,7 @@ Here's how to get time series data into Amazon Web Services (AWS).
 1. Click "Get Started", this will open a page to create a new API.
 1. Select "New API" and for API name enter `mbed time series database webhook`.
 1. Click "Create API" button.
-1. Click the "Actons" button and click "Create Resource".
+1. Click the "Actions" button and click "Create Resource".
 1. For "Resource Name" enter the text `webhook`.
 1. Click the "Create Resource" button.
 1. Click the "Actions" button and click "Create Method".
