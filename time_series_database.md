@@ -47,7 +47,25 @@ Follow the [mbed-os-example-client](https://github.com/ARMmbed/mbed-os-example-c
 
 # Amazon Web Services
 
-Here's how to get time series data into AWS.
+Here's how to get time series data into Amazon Web Services (AWS).
+
+## Configure the API Gateway
+
+1. Click "Services" in the upper-left to display a large menu of services.
+1. Click "API Gateway" listed under "Application Services".
+1. Click "Get Started", this will open a page to create a new API.
+1. Select "New API" and for API name enter `mbed time series database webhook`.
+1. Click "Create API" button.
+1. Click the "Actons" button and click "Create Resource".
+1. For "Resource Name" enter the text `webhook`.
+1. Click the "Create Resource" button.
+1. Click the "Actions" button and click "Create Method".
+1. Select the "GET" method in the drop-down and click the check mark.
+1. Under "Integration Type" select "Mock" and click "Save".
+1. Create a PUT method
+    * Integration type should be `Lambda`
+    * Lambda function: `mbed_time_series_webhook`
+1. Click on `Stages` -> `webhook` -> `PUT` to see the URL to use as the webhook callback below.
 
 1. [Configure the API Gateway](#)
 1. [Create the API Gateway Lambda function](#)
@@ -116,18 +134,6 @@ Here's how to get time series data into AWS.
 
 **TODO**: add a screenshot here of the finished Lambda function screen
 
-## Configure the API Gateway
-
-1. Go to the API Gateway service in the AWS console
-1. Create an API called `mbed time series database webhook`
-1. Create a resource called `/webhook`
-1. Create a GET method
-    * Integration type should be `Mock`
-    * Add a method response that returns 200
-1. Create a PUT method
-    * Integration type should be `Lambda`
-    * Lambda function: `mbed_time_series_webhook`
-1. Click on `Stages` -> `webhook` -> `PUT` to see the URL to use as the webhook callback below.
  
 **TODO**: Create a metric of securing the webhook(API keys?)
 
