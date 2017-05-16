@@ -181,83 +181,29 @@ Use the ARN of the DynamoDB table to create the IAM Role below.
 1. Register the webhook callback URL by running: `curl -s -H "Authorization: Bearer yourauthtoken" -H "Content-Type: application/json" -X PUT --data '{"url": "https://myapidomain.amazonaws.com/test/webhook"}' "https://api.connector.mbed.com/v2/notification/callback"` 
 1. Subscribe to button presses by running: `curl -s -H "Authorization: Bearer yourauthtoken" -X PUT "https://api.connector.mbed.com/v2/subscriptions/yourendpointid/3200/0/5501/"`
 
-## Create the DynamoDB Lambda function
+## Create RDS database
 
-1. Go to the lambda service in the AWS console
-1. Create a new lambda function
-    * Runtime: Python 2.7
-    * Template: Blank Function
-    * Trigger: none (just click "Next")
-    * Name: `mbed_time_series_dynamodb`
-    * Code:
- 
-    ```python
-    import json
-    import boto3
-    from datetime import datetime
-    from collections import defaultdict
+1. Make Aurora/MySQL on [RDS](https://aws.amazon.com/rds/)
+2. download [MySQL Workbench](https://www.mysql.com/products/workbench/)
+1. Authorize mysql workbench **TODO**
+1. Create table “events” **TODO**
 
-    default_cwc = boto3.client('cloudwatch', region_name='us-east-1')
-    
-    def put_cloudwatch_metric(endpoint, hour, event_count=1, cwc=default_cwc):
-        try:
-            timestamp = datetime.strptime(hour, '%Y-%m-%d %H:%M:%S')
-        except ValueError:
-            return
-        metricData=[{
-                'MetricName': endpoint,
-                'Timestamp': timestamp,
-                'Value': event_count,
-                'Unit': 'Count'
-            },]
-        response = cwc.put_metric_data(
-	          Namespace="MbedButtonPressHour", MetricData=metricData)
+**TODO**: Document adding data to RDS
 
-    def lambda_handler(event, context):
-        hour_event_counter = defaultdict(int)
-        for record in event['Records']:
-            try: endpoint = record['dynamodb']['NewImage']['Endpoint']['S']
-            except Exception as e:
-                endpoint='NULL'
-            try: hour = record['dynamodb']['NewImage']['EventHour']['S']
-            except Exception as e:
-                hour='NULL'
-            try:
-                event_count_old=int(
-                    record['dynamodb']['OldImage']['EventCount']['N'])
-            except Exception as e:
-                event_count_old=0
-            try:
-                event_count_new=int(
-                    record['dynamodb']['NewImage']['EventCount']['N'])
-            except Exception as e:
-                event_count_new=0
+## View data using QuickSight
 
-            if endpoint != 'NULL' and hour != 'NULL':
-                if(event_count_new > event_count_old):
-                    counter_diff = event_count_new - event_count_old
-                    hour_event_counter[(endpoint, hour)] += counter_diff
-
-        for key,val in hour_event_counter.iteritems():
-            print "%s, %s = %d" % (key[0], key[1], val)
-            put_cloudwatch_metric(key[0], key[1], int(val))
-        return 'Successfully processed {} records'.format(len(event['Records']))
-
-    ```
-    * Existing Role: `mbed_time_series_database`
-
-**TODO**: add a screenshot here of the finished Lambda function screen
-
-## Setup the CloudWatch Dashboard
-
-At this point, press the button on your device a few times.  This will push data
-into the system.
-
-1. Go to CloudWatch in the AWS console
-1. Click on `Browse Metrics`
-1. Click on `MbedButtonPressHour` under Custom Namespaces
-1. Click on Metrics with no dimensions
-1. Select your endpoint ID
-1. Click on Graphed Metrics
-1. Under the Statistic column, select Sum
-1. You should see your data in the graph
+1. Sign up for [QuickSight](https://quicksight.aws/)
+1. [Authorize](http://docs.aws.amazon.com/quicksight/latest/user/enabling-access-rds.html) connection from QuickSight to RDS
+1. In QuickSight, choose “New Analysis”
+1. “New data set”
+1. “RDS”
+1. Choose Instance ID, database name, username, password, give it a data source name, 
+1. “Create new data source”
+1. “Edit data set”
+1. “New field”
+1. parseDate({timestamp}, “yyyy-MM-dd HH:mm:ss”)
+1. name the new field ‘date"
+1. “Save and Visualize”
+1. highlight “date” and “value”
+1. click the arrows next to “Field wells”
+1. X axis dropdown, aggregate by hour
