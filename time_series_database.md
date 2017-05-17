@@ -138,6 +138,7 @@ Here's how to get time series data into Amazon Web Services (AWS).
 1. Click the "Create Resource" button.
 1. Click the "Actions" button and click "Create Method".
 1. Select the "GET" method in the drop-down and click the check mark.
+
 1. Under "Integration Type" select "Mock" and click "Save".
 1. Create a PUT method
     * Integration type should be `Lambda`
@@ -147,7 +148,7 @@ Here's how to get time series data into Amazon Web Services (AWS).
 1. [Create the API Gateway Lambda function](#)
 
 ![](time_series_database-aws_flow.svg)
- 
+
 **TODO**: Create a metric of securing the webhook(API keys?)
 
 **TODO**: add a screenshot here of the finished API Gateway screen
