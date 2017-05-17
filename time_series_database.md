@@ -72,64 +72,51 @@ Here's how to get time series data into Amazon Web Services (AWS).
 
 ![](time_series_database-aws_flow.svg)
 
-## Setup DynamoDB Table
-
-1. Go to the DynamoDB service in the AWS console.
-1. Click `Create Table`
-    * Name: `mbed_connector_button_presses`
-    * Primary Partition Key: Endpoint(String)
-    * Add Sort Key: yes
-    * Sort Key: EventHour(String)
-
-Use the ARN of the DynamoDB table to create the IAM Role below.
-
-**TODO**: add a screenshot here of the finished DynamoDB screen
-
 ## Setup IAM Role
 
 1. Go to the IAM service in the AWS console
-1. Click `Policies`
-1. Click `Create a policy`
-1. Click `Create Your Own Policy`
-   * Policy Name: `AWSLambdaMicroserviceExecutionRole`
-   * Policy Document:
 
-    ```json
-    {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Effect": "Allow",
-                "Action": [
-                    "dynamodb:DeleteItem",
-                    "dynamodb:GetItem",
-                    "dynamodb:PutItem",
-                    "dynamodb:Scan",
-                    "dynamodb:UpdateItem"
-                ],
-                "Resource": "[your_dynamodb_arn]"
-            }
-        ]
-    }
-    ```
 1. Create a new role called `mbed_time_series_database`
 1. Attach the `AWSLambdaBasicExecutionRole` policy
-1. Attach the `AWSLambdaMicroserviceExecutionRole` policy
+1. Attach the `AWSLambdaVPCAccessExecutionRole` policy
 
 **TODO**: add a screenshot here of the finished role screen
+
+
+## Create RDS database
+
+1. Make Aurora/MySQL on [RDS](https://aws.amazon.com/rds/)
+   * no-publicly-accessible
+   * default VPC
+   * database name: tsdb
+   * remember the ip address, username, and password
+2. download [MySQL Workbench](https://www.mysql.com/products/workbench/)
+1. Authorize mysql workbench **TODO**
+1. Create table “events” **TODO**
 
 ## Create the API Gateway Lambda function
 
 1. Go to the lambda service in the AWS console
 1. Check out [this repo](https://github.com/ARMmbed/exd_mysql_lambda)
-1. cd exd_mysql_lambda
-1. make
+1. `cd exd_mysql_lambda`
+1. Create a file named `mysqldb.cfg`
+   ```
+   [mysql]
+   hostname: <ip address of RDS>
+   username: <RDS username>
+   password: <RDS password>
+   database: tsdb
+   table: events
+   ```
+1. ```make```
 1. In Lambda console, create a new lambda function
     * Runtime: Python 2.7
     * Template: Blank Function
     * Trigger: none (just click "Next")
     * Name: `mbed_time_series_webhook`
     * Code: upload a the .zip file from before
+1. In `Advanced Settings`, choose the VPC that RDS was created in, and add all the subnets.
+1. `default` security group
 
 **TODO**: add a screenshot here of the finished Lambda function screen
 
@@ -143,14 +130,6 @@ Use the ARN of the DynamoDB table to create the IAM Role below.
 1. Register the webhook callback URL by running: `curl -s -H "Authorization: Bearer yourauthtoken" -H "Content-Type: application/json" -X PUT --data '{"url": "https://myapidomain.amazonaws.com/test/webhook"}' "https://api.connector.mbed.com/v2/notification/callback"` 
 1. Subscribe to button presses by running: `curl -s -H "Authorization: Bearer yourauthtoken" -X PUT "https://api.connector.mbed.com/v2/subscriptions/yourendpointid/3200/0/5501/"`
 
-## Create RDS database
-
-1. Make Aurora/MySQL on [RDS](https://aws.amazon.com/rds/)
-2. download [MySQL Workbench](https://www.mysql.com/products/workbench/)
-1. Authorize mysql workbench **TODO**
-1. Create table “events” **TODO**
-
-**TODO**: Document adding data to RDS
 
 ## View data using QuickSight
 
