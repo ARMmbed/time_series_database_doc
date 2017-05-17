@@ -51,16 +51,18 @@ Here's how to get time series data into Amazon Web Services (AWS).
 
 ## Configure the API Gateway
 
-1. Click "Services" in the upper-left to display a large menu of services.
-1. Click "API Gateway" listed under "Application Services".
+
+
+1. Click "Services" in the upper-left to display a large menu of services. ![Amazon Services](/screenshots/amazon/aws_services.png)
+1. Click "API Gateway" listed under "Application Services". ![API Gateway](screenshots/amazon/app_services.png)
 1. Click "Get Started", this will open a page to create a new API.
-1. Select "New API" and for API name enter `mbed time series database webhook`.
+1. Select "New API" and for API name enter `mbed time series database webhook`. ![New API](screenshots/amazon/create_new_api2.png)
 1. Click "Create API" button.
-1. Click the "Actions" button and click "Create Resource".
+1. Click the "Actions" button and click "Create Resource". ![Actions](screenshots/amazon/api_actions.png)
 1. For "Resource Name" enter the text `webhook`.
 1. Click the "Create Resource" button.
 1. Click the "Actions" button and click "Create Method".
-1. Select the "GET" method in the drop-down and click the check mark.
+1. Select the "GET" method in the drop-down and click the check mark. ![Action GET](screenshots/amazon/api_methods.png)
 1. Under "Integration Type" select "Mock" and click "Save".
 1. Create a PUT method
     * Integration type should be `Lambda`
