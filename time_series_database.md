@@ -121,53 +121,15 @@ Use the ARN of the DynamoDB table to create the IAM Role below.
 ## Create the API Gateway Lambda function
 
 1. Go to the lambda service in the AWS console
-1. Create a new lambda function
+1. Check out [this repo](https://github.com/ARMmbed/exd_mysql_lambda)
+1. cd exd_mysql_lambda
+1. make
+1. In Lambda console, create a new lambda function
     * Runtime: Python 2.7
     * Template: Blank Function
     * Trigger: none (just click "Next")
     * Name: `mbed_time_series_webhook`
-    * Code:
- 
-    ```python
-    from __future__ import print_function
-    import datetime
-    import json
-    import base64
-    
-    import boto3
-    
-    
-    default_dynamodb = boto3.resource(service_name='dynamodb',
-                                      region_name='us-east-1')
-    
-    def update_dynamo_event_counter(tableName, endpoint, hour, event_count=1,
-                                    dynamodb=default_dynamodb):
-            table = dynamodb.Table(tableName)
-            response = table.update_item(
-            Key={
-                'Endpoint': endpoint,
-                'EventHour': hour,
-            },
-            ExpressionAttributeValues={":value":event_count},
-            UpdateExpression="ADD EventCount :value")
-    
-    
-    def lambda_handler(event, context):
-        print("Received event: %r" % event)
-        if 'notifications' in event:
-            for notification in event['notifications']:
-                if notification['path'] == '/3200/0/5501':
-                        button_press_count = base64.b64decode(
-                            notification['payload'])
-                        print ('endpoint: %r button press count: %r' % (
-                            notification['ep'], button_press_count))
-                        now = datetime.datetime.now()
-                        hour = str(now).split(':', 1)[0]+':00:00'
-                        update_dynamo_event_counter(
-                            'mbed_connector_button_presses',
-                            notification['ep'], hour)
-    ```
-    * Existing Role: `mbed_time_series_database`
+    * Code: upload a the .zip file from before
 
 **TODO**: add a screenshot here of the finished Lambda function screen
 
