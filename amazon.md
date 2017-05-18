@@ -23,11 +23,15 @@ Here's how to get time series data into Amazon Web Services (AWS).
 1. Choose hardware for your database as you wish.
 1. Specify settings: ![Actions](screenshots/amazon/rds_db_details.png)
 1. Click "Next Step"
-1. Specify advanced details:
+1. Specify advanced details: ![Actions](screenshots/amazon/rds_db_advanced_details.png)
    * no-publicly-accessible
    * default VPC
    * database name: tsdb
    * remember the ip address
+1. Click the "Create" button.
+1. After a few minutes your database is up and running: ![Actions](screenshots/amazon/rds_database_created.png)
+   
+### Authorize access to your database
 1. Authorize access to RDS from your computer using security groups [more info](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithSecurityGroups.html).
    1. Find your own IP address.
       * `https://www.google.com/search?client=safari&rls=en&q=my+ip+address&ie=UTF-8&oe=UTF-8`
