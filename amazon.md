@@ -24,10 +24,10 @@ Here's how to get time series data into Amazon Web Services (AWS).
 1. Specify settings: ![Actions](screenshots/amazon/rds_db_details.png)
 1. Click "Next Step"
 1. Specify advanced details: ![Actions](screenshots/amazon/rds_db_advanced_details.png)
-   * no-publicly-accessible
-   * default VPC
-   * database name: tsdb
-   * remember the ip address
+    * no-publicly-accessible
+    * default VPC
+    * database name: tsdb
+    * remember the ip address
 1. Click the "Create" button.
 1. After a few minutes your database is up and running: ![Actions](screenshots/amazon/rds_database_created.png)
    
