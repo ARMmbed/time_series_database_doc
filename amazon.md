@@ -17,7 +17,10 @@ Here's how to get time series data into Amazon Web Services (AWS).
 
 ### Create RDS database
 
-1. Make Aurora/MySQL on [RDS](https://aws.amazon.com/rds/)
+1. In Amazon console, click "Services" and click "RDS"
+1. Click "Get Started"
+1. For "Amazon Aurora" click the "Select" button. (MySQL is equally compatible with these steps.)
+1. Specify DB Details:
    * no-publicly-accessible
    * default VPC
    * database name: tsdb
