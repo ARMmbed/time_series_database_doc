@@ -47,7 +47,7 @@ Authorize access to RDS from your computer using security groups [you can choose
     * Port Range: 3306
     * Source: Custom
     * CIDR: Your IP address/32, e.g. 203.0.113.1/32
-       * Note that this only adds your one IP address to the access list.  If your IP address changes, you need to update this CIDR to match your new IP address.  Alternatively, if you know your IP address block, you can enter that here.
+        * Note that this only adds your one IP address to the access list.  If your IP address changes, you need to update this CIDR to match your new IP address.  Alternatively, if you know your IP address block, you can enter that here.
 1. Click `Create`
 
 ## Create the events table
