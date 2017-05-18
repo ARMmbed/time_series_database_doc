@@ -38,16 +38,16 @@ Authorize access to RDS from your computer using security groups [you can choose
 1. Find your own IP address [google link](https://www.google.com/search?q=my+ip+address).
 1. In AWS EC2 Management console, click Security Groups under `NETWORK & SECURITY`
 1. Click `Create Security Group`
-   * Security group name: desktop-RDS-access
-   * Description: A security group to access RDS from my desktop PC.
-   * VPC: default
+    * Security group name: desktop-RDS-access
+    * Description: A security group to access RDS from my desktop PC.
+    * VPC: default
 1. Click `Inbound` -> `Add Rule`
 1. Enter information: ![Info](screenshots/amazon/security_group.png)
-   * Type: Custom TCP Rule
-   * Port Range: 3306
-   * Source: Custom
-   * CIDR: Your IP address/32, e.g. 203.0.113.1/32
-     * Note that this only adds your one IP address to the access list.  If your IP address changes, you need to update this CIDR to match your new IP address.  Alternatively, if you know your IP address block, you can enter that here.
+    * Type: Custom TCP Rule
+    * Port Range: 3306
+    * Source: Custom
+    * CIDR: Your IP address/32, e.g. 203.0.113.1/32
+       * Note that this only adds your one IP address to the access list.  If your IP address changes, you need to update this CIDR to match your new IP address.  Alternatively, if you know your IP address block, you can enter that here.
 1. Click `Create`
 
 ## Create the events table
@@ -63,9 +63,9 @@ Authorize access to RDS from your computer using security groups [you can choose
    ```
 1. In a terminal, run `mysql --defaults-file=rds.cnf`
 1. type `use tsdb`
-   * output: `Database changed`
+    * output: `Database changed`
 1. type ```create table `test` (`id` int(11) NOT NULL AUTO_INCREMENT, `ts` datetime NOT NULL, `value` double NOT NULL, `board` varchar(36) NOT NULL, `sensor` varchar(45) NOT NULL, PRIMARY KEY (`id`), KEY `ts` (`ts`), KEY `board` (`board`));```
-   * output: `Query OK, 0 rows affected (0.09 sec)`
+    * output: `Query OK, 0 rows affected (0.09 sec)`
 1. type `quit`
 
 ## Create the API Gateway Lambda function
