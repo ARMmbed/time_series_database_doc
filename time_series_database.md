@@ -31,19 +31,19 @@ Follow the [mbed-os-example-client](https://github.com/ARMmbed/mbed-os-example-c
 
 # Microsoft Azure
 
-**TODO**: finish me
+[Microsoft](microsoft.md)
 
 # InfluxDB
 
-**TODO**: finish me
+[InfluxDB](influxdb.md)
 
 # Google Cloud
 
-**TODO**: finish me
+[Google](google.md)
 
 # Graphite
 
-**TODO**: finish me
+[Graphite](graphite.md)
 
 # Amazon
 
