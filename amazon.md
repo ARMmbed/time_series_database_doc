@@ -96,7 +96,7 @@ Authorize access to RDS from your computer using security groups [you can choose
 
 ## Configure the API Gateway
 
-1. Click "Services" in the upper-left to display a large menu of services. ![Amazon Services](/screenshots/amazon/aws_services.png)
+1. Click "Services" in the upper-left to display a large menu of services. ![Amazon Services](screenshots/amazon/aws_services.png)
 1. Click "API Gateway" listed under "Application Services". ![API Gateway](screenshots/amazon/app_services.png)
 1. Click "Get Started", this will open a page to create a new API.
 1. Select "New API" and for API name enter `mbed time series database webhook`. ![New API](screenshots/amazon/create_new_api2.png)
