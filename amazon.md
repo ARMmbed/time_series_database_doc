@@ -2,7 +2,7 @@
 
 Here's how to get time series data into Amazon Web Services (AWS).
 
-### Setup IAM Role
+## Setup IAM Role
 
 1. Go to the IAM service in the AWS console.
 1. Click "Roles".
@@ -15,7 +15,7 @@ Here's how to get time series data into Amazon Web Services (AWS).
 1. Click the "Create role" button.
 1. The screen should display: ![Actions](screenshots/amazon/aim_role_finish.png)
 
-### Create RDS database
+## Create RDS database
 
 1. In Amazon console, click "Services" and click "RDS"
 1. Click "Get Started"
@@ -31,7 +31,7 @@ Here's how to get time series data into Amazon Web Services (AWS).
 1. Click the "Create" button.
 1. After a few minutes your database is up and running: ![Actions](screenshots/amazon/rds_database_created.png)
    
-### Authorize access to your database
+## Authorize access to your database
 1. Authorize access to RDS from your computer using security groups [more info](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithSecurityGroups.html).
    1. Find your own IP address.
       * `https://www.google.com/search?client=safari&rls=en&q=my+ip+address&ie=UTF-8&oe=UTF-8`
@@ -48,7 +48,7 @@ Here's how to get time series data into Amazon Web Services (AWS).
         * Note that this only adds your one IP address to the access list.  If your IP address changes, you need to update this CIDR to match your new IP address.  Alternatively, if you know your IP address block, you can enter that here.
    1. Click `Create`
 
-### Create the events table
+## Create the events table
 
 1. Download the [MySQL Shell](https://dev.mysql.com/downloads/shell/)
 1. Create a configuration file named `rds.cnf`
@@ -66,7 +66,7 @@ Here's how to get time series data into Amazon Web Services (AWS).
    * output: `Query OK, 0 rows affected (0.09 sec)`
 1. type `quit`
 
-### Create the API Gateway Lambda function
+## Create the API Gateway Lambda function
 
 1. Go to the lambda service in the AWS console
 1. Check out [this repo](https://github.com/ARMmbed/exd_mysql_lambda)
@@ -92,7 +92,7 @@ Here's how to get time series data into Amazon Web Services (AWS).
 
 **TODO**: add a screenshot here of the finished Lambda function screen
 
-### Configure the API Gateway
+## Configure the API Gateway
 
 1. Click "Services" in the upper-left to display a large menu of services. ![Amazon Services](/screenshots/amazon/aws_services.png)
 1. Click "API Gateway" listed under "Application Services". ![API Gateway](screenshots/amazon/app_services.png)
@@ -118,13 +118,13 @@ Here's how to get time series data into Amazon Web Services (AWS).
 
 **TODO**: add a screenshot here of the finished API Gateway screen
 
-### Register webhook callback
+## Register webhook callback
 
 1. Register the webhook callback URL by running: `curl -s -H "Authorization: Bearer yourauthtoken" -H "Content-Type: application/json" -X PUT --data '{"url": "https://myapidomain.amazonaws.com/test/webhook"}' "https://api.connector.mbed.com/v2/notification/callback"` 
 1. Subscribe to button presses by running: `curl -s -H "Authorization: Bearer yourauthtoken" -X PUT "https://api.connector.mbed.com/v2/subscriptions/yourendpointid/3200/0/5501/"`
 
 
-### View data using QuickSight
+## View data using QuickSight
 
 1. Sign up for [QuickSight](https://quicksight.aws/)
 1. [Authorize](http://docs.aws.amazon.com/quicksight/latest/user/enabling-access-rds.html) connection from QuickSight to RDS
