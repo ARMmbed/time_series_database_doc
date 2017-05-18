@@ -32,21 +32,23 @@ Here's how to get time series data into Amazon Web Services (AWS).
 1. After a few minutes your database is up and running: ![Actions](screenshots/amazon/rds_database_created.png)
    
 ## Authorize access to your database
-1. Authorize access to RDS from your computer using security groups [more info](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithSecurityGroups.html).
-   1. Find your own IP address.
-      * `https://www.google.com/search?client=safari&rls=en&q=my+ip+address&ie=UTF-8&oe=UTF-8`
-   1. In AWS EC2 Management console, click Security Groups under `NETWORK & SECURITY`
-   1. Click `Create Security Group`
-      * Security group name: desktop-RDS-access
-      * Description: A security group to access RDS from my desktop PC.
-      * VPC: default
-   1. Click `Inbound` -> `Add Rule`
-      * Type: Custom TCP Rule
-      * Port Range: 3306
-      * Source: Custom
-      * CIDR: Your IP address/32, e.g. 203.0.113.1/32
-        * Note that this only adds your one IP address to the access list.  If your IP address changes, you need to update this CIDR to match your new IP address.  Alternatively, if you know your IP address block, you can enter that here.
-   1. Click `Create`
+
+Authorize access to RDS from your computer using security groups [you can choose to read here for more information](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithSecurityGroups.html).
+
+1. Find your own IP address [google link](https://www.google.com/search?q=my+ip+address).
+1. In AWS EC2 Management console, click Security Groups under `NETWORK & SECURITY`
+1. Click `Create Security Group`
+   * Security group name: desktop-RDS-access
+   * Description: A security group to access RDS from my desktop PC.
+   * VPC: default
+1. Click `Inbound` -> `Add Rule`
+1. Enter information: ![Info](screenshots/amazon/security_group.png)
+   * Type: Custom TCP Rule
+   * Port Range: 3306
+   * Source: Custom
+   * CIDR: Your IP address/32, e.g. 203.0.113.1/32
+     * Note that this only adds your one IP address to the access list.  If your IP address changes, you need to update this CIDR to match your new IP address.  Alternatively, if you know your IP address block, you can enter that here.
+1. Click `Create`
 
 ## Create the events table
 
