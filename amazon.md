@@ -114,7 +114,7 @@ Authorize access to RDS from your computer using security groups [you can choose
 1. [Configure the API Gateway](#)
 1. [Create the API Gateway Lambda function](#)
 
-![](time_series_database-aws_flow.svg)
+![](aws_flow.svg)
 
 **TODO**: Create a metric of securing the webhook(API keys?)
 

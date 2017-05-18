@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="6.5156217in"
+   width="5.0916543in"
    height="1.2194734in"
-   viewBox="0 0 165.49679 30.974623"
+   viewBox="0 0 129.32802 30.974623"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.1 r15371"
@@ -147,7 +147,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.117038"
-     inkscape:cx="208.68967"
+     inkscape:cx="268.06032"
      inkscape:cy="-262.58498"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -155,8 +155,8 @@
      units="in"
      inkscape:window-width="1576"
      inkscape:window-height="1079"
-     inkscape:window-x="695"
-     inkscape:window-y="86"
+     inkscape:window-x="826"
+     inkscape:window-y="156"
      inkscape:window-maximized="0"
      showborder="true"
      fit-margin-top="0"
@@ -171,7 +171,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -179,7 +179,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-12.139346,-134.67464)">
+     transform="translate(-12.139349,-134.67464)">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
@@ -191,389 +191,236 @@
          x="6.8689847"
          y="200.87628" /></text>
     <g
-       id="g4790">
-      <g
-         id="g3890"
-         transform="matrix(0.26458333,0,0,0.26458333,7.9324736,132.36456)">
-        <polygon
-           id="polygon3846"
-           points="74.52,79.23 84.1,55.15 67.54,54.47 56.81,55.15 "
-           style="fill:#fad791" />
-        <polygon
-           id="polygon3848"
-           points="74.52,21.1 84.1,45.18 67.54,45.86 56.81,45.18 "
-           style="fill:#624a1e" />
-        <polygon
-           id="polygon3850"
-           points="25.48,21.22 15.9,45.15 32.46,45.86 43.19,45.18 "
-           style="fill:#624a1e" />
-        <polygon
-           id="polygon3852"
-           points="25.48,79.25 15.9,55.15 32.46,54.47 43.19,55.15 "
-           style="fill:#fad791" />
-        <polygon
-           id="polygon3854"
-           points="74.52,21.1 74.52,44.22 84.1,45.18 84.1,25.89 "
-           style="fill:#d9a741" />
-        <polygon
-           id="polygon3856"
-           points="56.81,45.18 56.81,25.88 74.52,21.1 74.52,44.22 "
-           style="fill:#876929" />
-        <polygon
-           id="polygon3858"
-           points="50,35.51 50,23.08 69.18,29.35 69.18,38.89 "
-           style="fill:#d9a741" />
-        <polygon
-           id="polygon3860"
-           points="60.67,39.82 41.36,37.08 50.14,35.53 69.18,38.89 "
-           style="fill:#624a1e" />
-        <polygon
-           id="polygon3862"
-           points="25.48,21.08 25.48,44.22 15.9,45.15 15.9,25.8 "
-           style="fill:#876929" />
-        <polygon
-           id="polygon3864"
-           points="43.19,45.18 43.19,25.88 25.48,21.08 25.48,44.22 "
-           style="fill:#d9a741" />
-        <polygon
-           id="polygon3866"
-           points="50,35.51 50,23.08 30.82,29.35 30.82,38.89 "
-           style="fill:#876929" />
-        <polygon
-           id="polygon3868"
-           points="39.33,39.82 58.64,37.08 49.86,35.53 30.82,38.89 "
-           style="fill:#624a1e" />
-        <polygon
-           id="polygon3870"
-           points="74.52,79.23 74.52,56.11 84.1,55.15 84.1,74.44 "
-           style="fill:#d9a741" />
-        <polygon
-           id="polygon3872"
-           points="56.81,55.15 56.81,74.45 74.52,79.23 74.52,56.11 "
-           style="fill:#876929" />
-        <polygon
-           id="polygon3874"
-           points="50,64.82 50,77.25 69.18,70.98 69.18,61.44 "
-           style="fill:#d9a741" />
-        <polygon
-           id="polygon3876"
-           points="60.67,60.51 41.36,63.25 50.14,64.79 69.18,61.44 "
-           style="fill:#fad791" />
-        <polygon
-           id="polygon3878"
-           points="25.48,79.25 25.48,56.11 15.9,55.15 15.9,74.44 "
-           style="fill:#876929" />
-        <polygon
-           id="polygon3880"
-           points="43.19,55.15 43.19,74.45 25.48,79.25 25.48,56.11 "
-           style="fill:#d9a741" />
-        <polygon
-           id="polygon3882"
-           points="50,64.82 50,77.25 30.82,70.98 30.82,61.44 "
-           style="fill:#876929" />
-        <polygon
-           id="polygon3884"
-           points="39.33,60.51 58.64,63.25 49.86,64.79 30.82,61.44 "
-           style="fill:#fad791" />
-        <polygon
-           id="polygon3886"
-           points="50,91.16 55.66,88.33 60.2,13.94 50,8.84 39.8,13.94 39.8,86.06 "
-           style="fill:#876929" />
-        <polygon
-           id="polygon3888"
-           points="60.2,13.94 60.2,86.06 50,91.16 50,8.84 "
-           style="fill:#d9a741" />
-      </g>
-      <g
-         id="g12"
-         transform="matrix(0.26458333,0,0,0.26458333,43.32668,132.36456)">
-        <circle
-           id="circle4"
-           r="30.43"
-           cy="51.25"
-           cx="50"
-           style="fill:#9d5025" />
-        <rect
-           id="rect6"
-           height="2.5"
-           width="60.860001"
-           y="48.75"
-           x="19.57"
-           style="fill:#9d5025" />
-        <circle
-           id="circle8"
-           r="30.43"
-           cy="48.75"
-           cx="50"
-           style="fill:#f58536" />
-        <polygon
-           id="polygon10"
-           points="50.39,47.27 58.34,68.08 60.23,67.36 64.53,65.72 69.8,63.7 67.44,57.51 62.16,59.53 54.61,39.76 52.51,34.29 51.53,31.71 49.98,27.67 42.89,27.67 39.98,27.67 39.98,34.29 45.42,34.29 47.31,39.23 31.57,67.25 39.17,67.25 "
-           style="fill:#ffffff" />
-      </g>
-      <g
-         id="g12-3"
-         transform="matrix(0.26458333,0,0,0.26458333,114.11507,132.36456)">
-        <circle
-           id="circle4-6"
-           r="30.43"
-           cy="51.25"
-           cx="50"
-           style="fill:#9d5025" />
-        <rect
-           id="rect6-7"
-           height="2.5"
-           width="60.860001"
-           y="48.75"
-           x="19.57"
-           style="fill:#9d5025" />
-        <circle
-           id="circle8-5"
-           r="30.43"
-           cy="48.75"
-           cx="50"
-           style="fill:#f58536" />
-        <polygon
-           id="polygon10-3"
-           points="50.39,47.27 58.34,68.08 60.23,67.36 64.53,65.72 69.8,63.7 67.44,57.51 62.16,59.53 54.61,39.76 52.51,34.29 51.53,31.71 49.98,27.67 42.89,27.67 39.98,27.67 39.98,34.29 45.42,34.29 47.31,39.23 31.57,67.25 39.17,67.25 "
-           style="fill:#ffffff" />
-      </g>
-      <g
-         id="g36"
-         transform="matrix(0.26458333,0,0,0.26458333,78.72088,132.36456)">
-        <polygon
-           id="polygon4"
-           points="24.75,23.24 29.5,30.26 29.5,32.74 20,32.74 20,30.26 "
-           style="fill:#19486f" />
-        <polygon
-           id="polygon6"
-           points="56.75,23.24 80,30.26 80,32.74 33.5,32.74 33.5,30.26 "
-           style="fill:#19486f" />
-        <polygon
-           id="polygon8"
-           points="24.75,38.74 29.5,45.76 29.5,48.24 20,48.24 20,45.76 "
-           style="fill:#19486f" />
-        <polygon
-           id="polygon10-5"
-           points="56.75,38.74 80,45.76 80,48.24 33.5,48.24 33.5,45.76 "
-           style="fill:#19486f" />
-        <polygon
-           id="polygon12"
-           points="24.75,54.24 29.5,61.26 29.5,63.74 20,63.74 20,61.26 "
-           style="fill:#19486f" />
-        <polygon
-           id="polygon14"
-           points="56.75,54.24 80,61.26 80,63.74 33.5,63.74 33.5,61.26 "
-           style="fill:#19486f" />
-        <polygon
-           id="polygon16"
-           points="24.75,69.74 29.5,76.76 29.5,79.24 20,79.24 20,76.76 "
-           style="fill:#19486f" />
-        <polygon
-           id="polygon18"
-           points="56.75,69.74 80,76.76 80,79.24 33.5,79.24 33.5,76.76 "
-           style="fill:#19486f" />
-        <rect
-           id="rect20"
-           height="9.5"
-           width="46.5"
-           y="20.76"
-           x="33.5"
-           style="fill:#2e73b8" />
-        <rect
-           id="rect22"
-           height="9.5"
-           width="46.5"
-           y="36.259998"
-           x="33.5"
-           style="fill:#2e73b8" />
-        <rect
-           id="rect24"
-           height="9.5"
-           width="46.5"
-           y="51.759998"
-           x="33.5"
-           style="fill:#2e73b8" />
-        <rect
-           id="rect26"
-           height="9.5"
-           width="46.5"
-           y="67.260002"
-           x="33.5"
-           style="fill:#2e73b8" />
-        <rect
-           id="rect28"
-           height="9.5"
-           width="9.5"
-           y="20.76"
-           x="20"
-           style="fill:#2e73b8" />
-        <rect
-           id="rect30"
-           height="9.5"
-           width="9.5"
-           y="36.259998"
-           x="20"
-           style="fill:#2e73b8" />
-        <rect
-           id="rect32"
-           height="9.5"
-           width="9.5"
-           y="51.759998"
-           x="20"
-           style="fill:#2e73b8" />
-        <rect
-           id="rect34"
-           height="9.5"
-           width="9.5"
-           y="67.260002"
-           x="20"
-           style="fill:#2e73b8" />
-      </g>
-      <g
-         id="g24"
-         transform="matrix(0.26458333,0,0,0.26458333,149.50928,132.36456)">
-        <polygon
-           id="polygon4-6"
-           points="86.24,65.43 50.01,60.1 13.76,65.43 49.99,91 "
-           style="fill:#b7ca9d" />
-        <polygon
-           id="polygon6-2"
-           points="41.53,44.57 27.14,22.5 21.02,24.85 21.02,64.81 27.14,66.64 "
-           style="fill:#4b612c" />
-        <polygon
-           id="polygon8-9"
-           points="48.82,62.91 27.14,66.72 27.14,22.5 48.82,27.38 "
-           style="fill:#759c3e" />
-        <polygon
-           id="polygon10-1"
-           points="30.7,13.23 39.15,9 64.19,41.28 39.15,70.33 30.7,67.8 "
-           style="fill:#4b612c" />
-        <polygon
-           id="polygon12-2"
-           points="68.11,63.61 39.15,70.4 39.15,9 68.11,20.29 "
-           style="fill:#759c3e" />
-        <polygon
-           id="polygon14-7"
-           points="49.99,78.28 13.76,65.43 13.76,72.89 49.99,91 "
-           style="fill:#4b612c" />
-        <polygon
-           id="polygon16-0"
-           points="86.24,72.88 49.99,91 49.99,78.28 86.24,65.43 "
-           style="fill:#759c3e" />
-        <polygon
-           id="polygon18-9"
-           points="76.06,53.08 67.27,53.08 42.23,54.78 50,73.59 "
-           style="fill:#b7ca9d" />
-        <polygon
-           id="polygon20"
-           points="42.23,71.26 50,73.59 49.99,55.62 42.23,54.78 "
-           style="fill:#4b612c" />
-        <polygon
-           id="polygon22"
-           points="76.06,53.08 49.99,55.62 50,73.59 76.06,65.74 "
-           style="fill:#759c3e" />
-      </g>
-      <path
-         inkscape:connector-curvature="0"
-         id="path4881"
-         d="M 61.978775,134.67464 Z"
-         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path5269"
-         d="m 30.979135,145.71763 c 13.95207,0 13.95207,0 13.95207,0"
-         style="fill:none;stroke:#000000;stroke-width:1.97386658;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send)" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path5269-0"
-         d="m 65.849753,145.71763 c 13.95207,0 13.95207,0 13.95207,0"
-         style="fill:none;stroke:#000000;stroke-width:1.97386658;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send-3)" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path5269-0-6"
-         d="m 101.47407,145.71763 c 13.95207,0 13.95207,0 13.95207,0"
-         style="fill:none;stroke:#000000;stroke-width:1.97386658;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send-3-6)" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path5269-0-6-7"
-         d="m 136.76339,145.71763 c 13.95207,0 13.95207,0 13.95207,0"
-         style="fill:none;stroke:#000000;stroke-width:1.97386658;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send-3-6-1)" />
-      <text
-         id="text9965"
-         y="160.56775"
+       transform="matrix(0.26458333,0,0,0.26458333,7.9324736,132.36205)"
+       id="g3890">
+      <polygon
+         style="fill:#fad791"
+         points="67.54,54.47 56.81,55.15 74.52,79.23 84.1,55.15 "
+         id="polygon3846" />
+      <polygon
+         style="fill:#624a1e"
+         points="67.54,45.86 56.81,45.18 74.52,21.1 84.1,45.18 "
+         id="polygon3848" />
+      <polygon
+         style="fill:#624a1e"
+         points="32.46,45.86 43.19,45.18 25.48,21.22 15.9,45.15 "
+         id="polygon3850" />
+      <polygon
+         style="fill:#fad791"
+         points="32.46,54.47 43.19,55.15 25.48,79.25 15.9,55.15 "
+         id="polygon3852" />
+      <polygon
+         style="fill:#d9a741"
+         points="84.1,45.18 84.1,25.89 74.52,21.1 74.52,44.22 "
+         id="polygon3854" />
+      <polygon
+         style="fill:#876929"
+         points="74.52,21.1 74.52,44.22 56.81,45.18 56.81,25.88 "
+         id="polygon3856" />
+      <polygon
+         style="fill:#d9a741"
+         points="69.18,29.35 69.18,38.89 50,35.51 50,23.08 "
+         id="polygon3858" />
+      <polygon
+         style="fill:#624a1e"
+         points="50.14,35.53 69.18,38.89 60.67,39.82 41.36,37.08 "
+         id="polygon3860" />
+      <polygon
+         style="fill:#876929"
+         points="15.9,45.15 15.9,25.8 25.48,21.08 25.48,44.22 "
+         id="polygon3862" />
+      <polygon
+         style="fill:#d9a741"
+         points="25.48,21.08 25.48,44.22 43.19,45.18 43.19,25.88 "
+         id="polygon3864" />
+      <polygon
+         style="fill:#876929"
+         points="30.82,29.35 30.82,38.89 50,35.51 50,23.08 "
+         id="polygon3866" />
+      <polygon
+         style="fill:#624a1e"
+         points="49.86,35.53 30.82,38.89 39.33,39.82 58.64,37.08 "
+         id="polygon3868" />
+      <polygon
+         style="fill:#d9a741"
+         points="84.1,55.15 84.1,74.44 74.52,79.23 74.52,56.11 "
+         id="polygon3870" />
+      <polygon
+         style="fill:#876929"
+         points="74.52,79.23 74.52,56.11 56.81,55.15 56.81,74.45 "
+         id="polygon3872" />
+      <polygon
+         style="fill:#d9a741"
+         points="69.18,70.98 69.18,61.44 50,64.82 50,77.25 "
+         id="polygon3874" />
+      <polygon
+         style="fill:#fad791"
+         points="50.14,64.79 69.18,61.44 60.67,60.51 41.36,63.25 "
+         id="polygon3876" />
+      <polygon
+         style="fill:#876929"
+         points="15.9,55.15 15.9,74.44 25.48,79.25 25.48,56.11 "
+         id="polygon3878" />
+      <polygon
+         style="fill:#d9a741"
+         points="25.48,79.25 25.48,56.11 43.19,55.15 43.19,74.45 "
+         id="polygon3880" />
+      <polygon
+         style="fill:#876929"
+         points="30.82,70.98 30.82,61.44 50,64.82 50,77.25 "
+         id="polygon3882" />
+      <polygon
+         style="fill:#fad791"
+         points="49.86,64.79 30.82,61.44 39.33,60.51 58.64,63.25 "
+         id="polygon3884" />
+      <polygon
+         style="fill:#876929"
+         points="50,91.16 55.66,88.33 60.2,13.94 50,8.84 39.8,13.94 39.8,86.06 "
+         id="polygon3886" />
+      <polygon
+         style="fill:#d9a741"
+         points="50,91.16 50,8.84 60.2,13.94 60.2,86.06 "
+         id="polygon3888" />
+    </g>
+    <g
+       transform="matrix(0.26458333,0,0,0.26458333,43.32668,132.36205)"
+       id="g12">
+      <circle
+         style="fill:#9d5025"
+         cx="50"
+         cy="51.25"
+         r="30.43"
+         id="circle4" />
+      <rect
+         style="fill:#9d5025"
+         x="19.57"
+         y="48.75"
+         width="60.860001"
+         height="2.5"
+         id="rect6" />
+      <circle
+         style="fill:#f58536"
+         cx="50"
+         cy="48.75"
+         r="30.43"
+         id="circle8" />
+      <polygon
+         style="fill:#ffffff"
+         points="62.16,59.53 54.61,39.76 52.51,34.29 51.53,31.71 49.98,27.67 42.89,27.67 39.98,27.67 39.98,34.29 45.42,34.29 47.31,39.23 31.57,67.25 39.17,67.25 50.39,47.27 58.34,68.08 60.23,67.36 64.53,65.72 69.8,63.7 67.44,57.51 "
+         id="polygon10" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 61.978775,134.67464 Z"
+       id="path4881"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.97386658;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send)"
+       d="m 30.979135,145.71763 c 13.95207,0 13.95207,0 13.95207,0"
+       id="path5269"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.97386658;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send-3)"
+       d="m 65.849753,145.71763 c 13.95207,0 13.95207,0 13.95207,0"
+       id="path5269-0"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.97386658;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send-3-6)"
+       d="m 101.47407,145.71763 c 13.95207,0 13.95207,0 13.95207,0"
+       id="path5269-0-6"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="56.701668"
+       y="160.56775"
+       id="text9965"><tspan
+         sodipodi:role="line"
+         id="tspan9963"
          x="56.701668"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
-           y="160.56775"
-           x="56.701668"
-           id="tspan9963"
-           sodipodi:role="line">AWS Lambda</tspan><tspan
-           id="tspan9975"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
-           y="164.97748"
-           x="56.701668"
-           sodipodi:role="line">Function</tspan></text>
-      <text
-         id="text9969"
-         y="160.50574"
+         y="160.56775"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332">AWS Lambda</tspan><tspan
+         sodipodi:role="line"
+         x="56.701668"
+         y="164.97748"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan9975">Function</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="92.057381"
+       y="160.50574"
+       id="text9969"><tspan
+         sodipodi:role="line"
          x="92.057381"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
-           y="160.50574"
-           x="92.057381"
-           id="tspan9967"
-           sodipodi:role="line">AWS DynamoDB</tspan><tspan
-           id="tspan9991"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
-           y="164.91547"
-           x="92.057381"
-           sodipodi:role="line">Table</tspan></text>
-      <text
-         id="text9973"
-         y="160.56775"
-         x="162.72389"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
-           y="160.56775"
-           x="162.72389"
-           id="tspan9971"
-           sodipodi:role="line">AWS CloudWatch</tspan></text>
-      <text
-         id="text9985"
          y="160.50574"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan9991">AWS RDS</tspan><tspan
+         sodipodi:role="line"
+         x="92.057381"
+         y="164.91547"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan298">Database</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="21.115131"
+       y="160.50574"
+       id="text9985"><tspan
+         sodipodi:role="line"
+         id="tspan9983"
          x="21.115131"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-         xml:space="preserve"><tspan
-           style="stroke-width:0.26458332"
-           y="160.50574"
-           x="21.115131"
-           id="tspan9983"
-           sodipodi:role="line">AWS API</tspan><tspan
-           id="tspan9987"
-           style="stroke-width:0.26458332"
-           y="164.91547"
-           x="21.115131"
-           sodipodi:role="line">Gateway</tspan></text>
-      <text
-         id="text9965-9"
-         y="160.56775"
+         y="160.50574"
+         style="stroke-width:0.26458332">AWS API</tspan><tspan
+         sodipodi:role="line"
+         x="21.115131"
+         y="164.91547"
+         style="stroke-width:0.26458332"
+         id="tspan9987">Gateway</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="127.48717"
+       y="160.56775"
+       id="text9965-9"><tspan
+         sodipodi:role="line"
          x="127.48717"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
-           y="160.56775"
-           x="127.48717"
-           id="tspan9963-2"
-           sodipodi:role="line">AWS Lambda</tspan><tspan
-           id="tspan9975-2"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
-           y="164.97748"
-           x="127.48717"
-           sodipodi:role="line">Function</tspan></text>
+         y="160.56775"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan9975-2">AWS QuickSight</tspan></text>
+    <g
+       transform="matrix(0.26458333,0,0,0.26458333,78.598351,132.36205)"
+       id="g177">
+      <polygon
+         style="fill:#2e73b8"
+         points="74,78.86 82,70.09 82,29.91 74,21.12 62.72,50 "
+         id="polygon167" />
+      <polygon
+         style="fill:#5294cf"
+         points="60,14 43.38,50 60,86 74,78.86 74,21.12 "
+         id="polygon169" />
+      <polygon
+         style="fill:#2e73b8"
+         points="40,14 28,50 40,86 60,86 60,14 "
+         id="polygon171" />
+      <polygon
+         style="fill:#205b99"
+         points="26,21.12 19.81,50 26,78.85 40,86 40,14 "
+         id="polygon173" />
+      <polygon
+         style="fill:#19486f"
+         points="18,70.09 26,78.85 26,21.12 18,29.91 "
+         id="polygon175" />
+    </g>
+    <g
+       transform="matrix(0.26458333,0,0,0.26458333,113.65386,132.67955)"
+       id="Knockout_Shape_-_Small_Corners_-_No_Shadow"
+       data-name="Knockout Shape - Small Corners - No Shadow">
+      <path
+         style="fill:#00b7f4"
+         inkscape:connector-curvature="0"
+         id="Fill-2"
+         d="M 72.5,34.2 50,56.7 V 38.2 L 27.5,60.7 V 26.2 h 45.1 v 8 z M 25.8,22.3 a 2.26,2.26 0 0 0 -2.3,2.3 V 73 a 2.26,2.26 0 0 0 2.3,2.3 H 74.2 A 2.26,2.26 0 0 0 76.5,73 V 24.6 a 2.26,2.26 0 0 0 -2.3,-2.3 z" />
     </g>
   </g>
 </svg>
