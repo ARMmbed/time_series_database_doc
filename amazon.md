@@ -109,9 +109,10 @@ Authorize access to RDS from your computer using security groups [you can choose
 1. Click the "Actions" button and click "Create Method".
 1. Select the "GET" method in the drop-down and click the check mark. ![Action GET](screenshots/amazon/api_methods.png)
 1. Under "Integration Type" select "Mock" and click "Save".
-1. Create a PUT method
+1. Create a PUT method ![Actions](screenshots/amazon/api_put_setup.png)
     * Integration type should be `Lambda`
     * Lambda function: `mbed_time_series_webhook`
+1. Click on "Actions" and click on "Deploy API". ![Actions](screenshots/amazon/deploy_api.png)
 1. Click on `Stages` -> `webhook` -> `PUT` to see the URL to use as the webhook callback below.
 1. [Configure the API Gateway](#)
 1. [Create the API Gateway Lambda function](#)
