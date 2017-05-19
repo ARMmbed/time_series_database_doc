@@ -83,7 +83,7 @@ Authorize access to RDS from your computer using security groups [you can choose
    database: tsdb
    table: events
    ```
-1. Type `make`.
+1. Type `make`
 1. Go to the lambda service in the AWS console
 1. In Lambda console, create a new lambda function
     * Runtime: Python 2.7
