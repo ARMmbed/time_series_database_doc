@@ -61,7 +61,10 @@ Authorize access to RDS from your computer using security groups [you can choose
    user=tsdbuser
    password=<tsdb password>
    ```
-1. In a terminal, run `mysql --defaults-file=rds.cnf`
+1. In a terminal, run `mysql --defaults-file=rds.cnf` or on a mac: 
+   ```
+   mysqlsh --sql -h tsdb.ctvalvkuu7dg.us-west-2.rds.amazonaws.com -P 3306 -u tsdbuser -p
+   ```
 1. type `use tsdb`
     * output: `Database changed`
 1. type ```create table `test` (`id` int(11) NOT NULL AUTO_INCREMENT, `ts` datetime NOT NULL, `value` double NOT NULL, `board` varchar(36) NOT NULL, `sensor` varchar(45) NOT NULL, PRIMARY KEY (`id`), KEY `ts` (`ts`), KEY `board` (`board`));```
