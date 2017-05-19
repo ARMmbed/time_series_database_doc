@@ -65,11 +65,11 @@ Authorize access to RDS from your computer using security groups [you can choose
    ```
    mysqlsh --sql -h tsdb.ctvalvkuu7dg.us-west-2.rds.amazonaws.com -P 3306 -u tsdbuser -p
    ```
-1. type `use tsdb`
+1. type `use tsdb;`
     * output: `Database changed`
 1. type ```create table `test` (`id` int(11) NOT NULL AUTO_INCREMENT, `ts` datetime NOT NULL, `value` double NOT NULL, `board` varchar(36) NOT NULL, `sensor` varchar(45) NOT NULL, PRIMARY KEY (`id`), KEY `ts` (`ts`), KEY `board` (`board`));```
     * output: `Query OK, 0 rows affected (0.09 sec)`
-1. type `quit`
+1. type `quit;`
 
 ## Create the API Gateway Lambda function
 
