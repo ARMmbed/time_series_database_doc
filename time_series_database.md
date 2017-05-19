@@ -29,22 +29,12 @@ Follow the [mbed-os-example-client](https://github.com/ARMmbed/mbed-os-example-c
 
 **TODO**: flush out once we have more platforms than just Amazon.
 
-# Microsoft Azure
+# [Microsoft Azure](microsoft.md)
 
-[Microsoft](microsoft.md)
+# [InfluxDB](influxdb.md)
 
-# InfluxDB
+# [Google Cloud](google.md)
 
-[InfluxDB](influxdb.md)
+# [Graphite](graphite.md)
 
-# Google Cloud
-
-[Google](google.md)
-
-# Graphite
-
-[Graphite](graphite.md)
-
-# Amazon
-
-[Amazon](amazon.md)
+# [Amazon](amazon.md)
