@@ -2,6 +2,8 @@
 
 Here's how to get time series data into Amazon Web Services (AWS).
 
+Image of amazon data flow: ![](aws_flow.svg)
+
 ## Setup IAM Role
 
 1. Go to the IAM service in the AWS console.
@@ -114,14 +116,7 @@ Authorize access to RDS from your computer using security groups [you can choose
     * Lambda function: `mbed_time_series_webhook`
 1. Click on "Actions" and click on "Deploy API". ![Actions](screenshots/amazon/deploy_api.png)
 1. Click on `Stages` -> `webhook` -> `PUT` to see the URL to use as the webhook callback below.
-1. [Configure the API Gateway](#)
-1. [Create the API Gateway Lambda function](#)
 
-![](aws_flow.svg)
-
-**TODO**: Create a metric of securing the webhook(API keys?)
-
-**TODO**: add a screenshot here of the finished API Gateway screen
 
 ## Register webhook callback
 
