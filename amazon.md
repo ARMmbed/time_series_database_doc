@@ -120,7 +120,7 @@ Authorize access to RDS from your computer using security groups [you can choose
 
 ## Register webhook callback
 
-Use your [mbed Connector access key](https://connector.mbed.com/#accesskeys) in the curl commands below.
+Use your [mbed Connector access key](https://connector.mbed.com/#accesskeys) and [endpoint id](https://connector.mbed.com/#endpoints) in the curl commands below.
 
 1. Register the webhook callback URL by running:
 
@@ -132,9 +132,7 @@ Use your [mbed Connector access key](https://connector.mbed.com/#accesskeys) in 
 1. Subscribe to button presses by running:
 
         curl -s -H "Authorization: Bearer yourmbedaccesskey" \
-        -H "Content-Type: application/json" \
-        --data '[{endpoint-name: "*", resource-path: ["/3200/0/5501/"]}]' \
-        -X PUT "https://api.connector.mbed.com/v2/subscriptions"
+        -X PUT "https://api.connector.mbed.com/v2/subscriptions/yourendpointid/3200/0/5501/"
 
 
 ## View data using QuickSight
