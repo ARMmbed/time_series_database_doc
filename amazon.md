@@ -35,6 +35,8 @@ Image of amazon data flow: ![](aws_flow.svg)
    
 ## Authorize access to your database
 
+### Create a security group to allow access to RDS from your Desktop
+
 Authorize access to RDS from your computer using security groups [you can choose to read here for more information](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithSecurityGroups.html).
 
 1. Find your own IP address [google link](https://www.google.com/search?q=my+ip+address).
@@ -51,6 +53,14 @@ Authorize access to RDS from your computer using security groups [you can choose
     * CIDR: Your IP address/32, e.g. 203.0.113.1/32
         * Note that this only adds your one IP address to the access list.  If your IP address changes, you need to update this CIDR to match your new IP address.  Alternatively, if you know your IP address block, you can enter that here.
 1. Click `Create`
+
+### Add this security group to the security groups used by your RDS instance
+
+1. Open your RDS instance in the AWS console.
+1. Click `Actions` -> `Modify`
+1. Ctrl+click (or cmd+click on Mac) the default security group, and the newly created security group
+1. Check `Apply Immediately`
+1. Confirm
 
 ## Create the events table
 
