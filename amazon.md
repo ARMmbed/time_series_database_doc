@@ -120,6 +120,8 @@ Authorize access to RDS from your computer using security groups [you can choose
 
 ## Register webhook callback
 
+Use your [mbed Connector access key](https://connector.mbed.com/#accesskeys) in the curl commands below.
+
 1. Register the webhook callback URL by running:
 
         curl -s -H "Authorization: Bearer yourmbedaccesskey" \
