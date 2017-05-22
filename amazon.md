@@ -79,7 +79,7 @@ Authorize access to RDS from your computer using security groups [you can choose
    ```
 1. type `use tsdb;`
     * output: `Database changed`
-1. type ```create table `test` (`id` int(11) NOT NULL AUTO_INCREMENT, `ts` datetime NOT NULL, `value` double NOT NULL, `board` varchar(36) NOT NULL, `sensor` varchar(45) NOT NULL, PRIMARY KEY (`id`), KEY `ts` (`ts`), KEY `board` (`board`));```
+1. type ```create table `events` (`id` int(11) NOT NULL AUTO_INCREMENT, `ts` datetime NOT NULL, `value` double NOT NULL, `board` varchar(36) NOT NULL, `sensor` varchar(45) NOT NULL, PRIMARY KEY (`id`), KEY `ts` (`ts`), KEY `board` (`board`));```
     * output: `Query OK, 0 rows affected (0.09 sec)`
 1. type `quit;`
 
