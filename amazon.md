@@ -122,14 +122,14 @@ Authorize access to RDS from your computer using security groups [you can choose
 
 1. Register the webhook callback URL by running:
 
-        curl -s -H "Authorization: Bearer yourauthtoken" \
+        curl -s -H "Authorization: Bearer yourmbedaccesskey" \
         -H "Content-Type: application/json" \
         --data '{"url": "https://myapidomain.amazonaws.com/test/webhook"}' \
         -X PUT "https://api.connector.mbed.com/v2/notification/callback"
 
 1. Subscribe to button presses by running:
 
-        curl -s -H "Authorization: Bearer yourauthtoken" \
+        curl -s -H "Authorization: Bearer yourmbedaccesskey" \
         -H "Content-Type: application/json" \
         --data '[{endpoint-name: "*", resource-path: ["/3200/0/5501/"]}]' \
         -X PUT "https://api.connector.mbed.com/v2/subscriptions"
