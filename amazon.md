@@ -57,10 +57,10 @@ Authorize access to RDS from your computer using security groups [you can choose
 ### Add this security group to the security groups used by your RDS instance
 
 1. Open your RDS instance in the AWS console.
-1. Click `Actions` -> `Modify`
-1. Ctrl+click (or cmd+click on Mac) the default security group, and the newly created security group
-1. Check `Apply Immediately`
-1. Confirm
+1. Click "Actions" then click "Modify"
+1. Ctrl+click (or cmd+click on Mac) the default security group, and the newly created security group ![Info](screenshots/amazon/rds_network_security.png)
+1. Check "Apply Immediately"
+1. Click "Confirm" button.
 
 ## Create the events table
 
