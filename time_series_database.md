@@ -12,6 +12,7 @@ The steps here will use the mbed web-compiler. This will load an operating syste
 
 1. Login to [connector.mbed.com](https://connector.mbed.com), create an account if you need to.
 1. Login to [developer.mbed.org](https://developer.mbed.org/) with the same account.
+1. Physically connect and enthernet cable and power cable to your board.
 1. Visit [mbed-os-example-client](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-client/).
 1. Click the button "Import into Compiler" in the upper right.
 1. A new browser window opens to the mbed web compiler. Click the "import" button to begin the import process.
@@ -24,8 +25,8 @@ The steps here will use the mbed web-compiler. This will load an operating syste
 1. Click the "Save" button near the top and the "Compile" button near the top.
 1. After compilation succeeds a file is downloaded automatically: `mbed-os-example-client_K64F.bin`.
 1. Drag-and-drop this file to the disk for your mbed device.
-
-Follow the [mbed-os-example-client](https://github.com/ARMmbed/mbed-os-example-client) to get data from a device into mbed Connector.
+1. Once it's done copying the file (which takes a few seconds at most), restart the board.
+1. Visit [your connected devices section of connector.mbed.com](https://connector.mbed.com/#endpoints) and you should see something like: 
 
 # Pick a Time Series Platform
 
