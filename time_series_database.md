@@ -26,7 +26,7 @@ The steps here will use the mbed web-compiler. This will load an operating syste
 1. After compilation succeeds a file is downloaded automatically: `mbed-os-example-client_K64F.bin`.
 1. Drag-and-drop this file to the disk for your mbed device.
 1. Once it's done copying the file (which takes a few seconds at most), restart the board.
-1. Visit [your connected devices section of connector.mbed.com](https://connector.mbed.com/#endpoints) and you should see something like: 
+1. Visit [your connected devices section of connector.mbed.com](https://connector.mbed.com/#endpoints) and you should see your device listed: ![Actions](screenshots/mbed/connected_devices.png)
 
 # Pick a Time Series Platform
 
