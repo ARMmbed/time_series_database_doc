@@ -150,7 +150,7 @@ Use your [mbed Connector access key](https://connector.mbed.com/#accesskeys) and
 1. Sign up for [QuickSight](https://quicksight.aws/)
 1. [Authorize](http://docs.aws.amazon.com/quicksight/latest/user/enabling-access-rds.html) connection from QuickSight to RDS
 1. On the QuickSight main page click the name of your RDS Instance, "tsdb" in this case: ![Actions](screenshots/amazon/quicksight_main.png)
-1. Enter the "username" and "password" for your RDS so that QuickSight may access it and click "Create data source".
+1. Enter the "username" and "password" for your RDS so that QuickSight may access it and click "Create data source". ![Actions](screenshots/amazon/quicksight_rds_setup.png)
 1. “Edit data set”
 1. “New field”
 1. parseDate({timestamp}, “yyyy-MM-dd HH:mm:ss”)
