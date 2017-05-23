@@ -29,7 +29,7 @@ Image of amazon data flow: ![](aws_flow.svg)
     * no-publicly-accessible
     * default VPC
     * database name: tsdb
-    * remember the ip address
+    * remember the hostname (such as "tsdb.abcdefghi.us-west-2.rds.amazonaws.com")
 1. Click the "Create" button.
 1. After a few minutes your database is up and running: ![Actions](screenshots/amazon/rds_database_created.png)
    
