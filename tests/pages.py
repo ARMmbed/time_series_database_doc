@@ -4,7 +4,7 @@ from netrc import netrc
 from cookielib import Cookie
 
 import seleniumpy
-from interruptingcow import timeout
+from retry import retry
 from cookiestxt import MozillaCookieJar
 from selenium.common.exceptions import WebDriverException
 from selenium.common.exceptions import StaleElementReferenceException
@@ -137,37 +137,20 @@ class IAMCreateNewRolePage(AWSAuthPage):
                 row.find(tag_name="button").click()
                 break
 
+    @retry(StaleElementReferenceException, tries=25, delay=0.200)
     def filter(self, text):
-        # TODO: figure out how to make this reliable without using timeout
-        trying = True
-        with timeout(5):
-            while trying:
-                try:
-                    input = self.driver.wait_for(class_name="search_input")
-                    input.text = text
-                except StaleElementReferenceException:
-                    pass
-                else:
-                    trying = False
+        self.driver.wait_for(class_name="search_input").text = text
 
+    @retry(StaleElementReferenceException, tries=25, delay=0.200)
     def check(self, text):
-        # TODO: figure out how to make this reliable without using timeout
-        trying = True
-        with timeout(5):
-            while trying:
-                table = [t for t in self.driver.find_all(tag_name="table") \
-                         if t['data-table'] == 'resource'][0]
-                rows = table.find(tag_name="tbody").find_all(tag_name="tr")
-                for row in rows:
-                    try:
-                        cols = row.find_all(tag_name="td")
-                    except StaleElementReferenceException:
-                        break
-                    else:
-                        if cols[2]['title'] == text:
-                            row.find(class_name="control_checkbox").click()
-                            trying = False
-                            break
+        table = [t for t in self.driver.find_all(tag_name="table") \
+                 if t['data-table'] == 'resource'][0]
+        rows = table.find(tag_name="tbody").find_all(tag_name="tr")
+        for row in rows:
+            cols = row.find_all(tag_name="td")
+            if cols[2]['title'] == text:
+                row.find(class_name="control_checkbox").click()
+                return
 
     def next_step(self):
         self.driver.find(class_name="next").click()
