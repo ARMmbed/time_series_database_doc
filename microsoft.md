@@ -53,9 +53,7 @@ Pick a name for the event source, and make sure it's in Event Hub mode and conne
 
 ![Configure Event Source screenshot](screenshots/microsoft/create_event_source_2.png)
 
-## 4. Feed the Event Hub from mbed Cloud data events
-
-### 4a. Use Microsoft Functions
+## 4. Use Microsoft Functions to feed the Event Hub from mbed Cloud data events
 
 In the Microsoft Azure left menu, click the **+** button, then go to **Compute** -> **Function App**. Name your function and click Create.
 
@@ -185,25 +183,6 @@ The data will be in JSON format:
        [ { ep: 'your_device_id',
            ept: 'test',
            resources: [Object containing exposed resources] } ] }
-
-### 4b. Create a virtual machine and run a node.js server on it
-
-*TODO: add more detail to this section*
-
-As an alternative to Microsoft Functions, you can deploy your own VM and use an app to pull data from mbed Cloud and send it as events to Microsoft's Event Hub.
-
-* create a VM
-* install node.js
-* clone https://github.com/CristianPrundeanuARM/exd-tsdb-cloud-connector-jsnode
-* configure the **_.env_** file:
-
-      ACCESS_KEY=your_mbed_access_key_here
-      PORT=8080
-      HOST=0.0.0.0
-      AZURE_CONNECTION_STRING=Endpoint=sb://exampleeventhub.servicebus.windows.net/;SharedAccessKeyName=EventHubPolicy1;SharedAccessKey=YourEventHubAccessKey;EntityPath=exampleeventhub-1
-
-* run the app: **_node app.js_**
-* browse to the app's web interface (http://your_VM_IP_address:8080) and subscribe to JSON data updates (called "**Aggregated data**" on the web interface).
 
 ## 5. Visualize the data
 
