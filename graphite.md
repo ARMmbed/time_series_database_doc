@@ -7,13 +7,13 @@ The conversion from mbed cloud data format to Graphite data format is done withi
 ## Preparing Your Environment
 
 * Setup an AWS account.
-* Create and test the [mbed client os example](https://github.com/ARMmbed/mbed-client-quickstart).  Make sure to keep the **AccessKey** token around.  It will be needed in the `Register Webhook` step.
+* Create and test the [mbed client os example].  Make sure to keep the **AccessKey** token around.  It will be needed in the `Register Webhook` step.
 
 
 
 ## Setting up the Graphite Server
 
-Creating a Graphite server is not a trivial task and the work has been done and packaged in a Docker image.  This image is hosted on Docker Hub and built from github [here](https://github.com/hopsoft/docker-graphite-statsd).  This image will be run within the Amazon Elastic Container Service (AWS ECS).
+Creating a Graphite server is not a trivial task and the work has been done and packaged in a Docker image.  This image is hosted on Docker Hub and built from github [here][1].  This image will be run within the Amazon Elastic Container Service (AWS ECS).
 
 1. On the first page of the ECS walk-through, there is a pair of checkboxes.  Select the 'Deploy a sample application onto an Amazon Cluster' and deselect 'Store container images securely with Amazon ECR', then press 'Continue'.  ![Configure](screenshots/graphite/ecs_configure_1.png)
 
@@ -29,7 +29,7 @@ On this form, specify a task name, an image name, the docker image location, and
 1. Finally, review and deploy.
 ![Service](screenshots/graphite/ecs_review.png)
 
-1. (Optional) For a production environment, there are a number of steps to secure and customize the Graphite server.  Recommendations and instructions can be found on the [Github Page](https://github.com/hopsoft/docker-graphite-statsd).
+1. (Optional) For a production environment, there are a number of steps to secure and customize the Graphite server.  Recommendations and instructions can be found on the [Docker Hub Page][1].
 
 After all of the steps, you can verify that a Graphite service is up and running.  In order to find the DNS name of the Graphite service:
 
@@ -63,7 +63,7 @@ The Gateway API / Lambda service needs to be able to get to and interact with th
 ### Create the Lambda function
 
 1. Go to the Lambda service in the AWS console.
-1. Check out [this repo](https://github.com/ARMmbed/exd_graphite_lambda).
+1. Check out [this repo][2].
 1. `cd exd_graphite_lambda`
 1. Create a file named `graphite.cfg`
    ```
@@ -137,4 +137,6 @@ In order for the API to be available to the public, it must be *deployed*.  Here
   ```
 
 ---
-  end of page
+[mbed client os example]: https://github.com/ARMmbed/mbed-client-quickstart
+[1]: https://hub.docker.com/r/hopsoft/graphite-statsd/
+[2]: https://github.com/ARMmbed/exd_graphite_lambda
