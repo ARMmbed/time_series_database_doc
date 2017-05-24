@@ -4,7 +4,7 @@ Microsoft offers a 30-day trial account with $200 to spend on Azure services dur
 
 Subscribe link: https://azure.microsoft.com/en-us/services/time-series-insights/
 
-TODO: add diagram of data flow for Azure TSI
+*TODO: add diagram of data flow for Azure TSI*
 
 *Note*: Some of the steps below will take a minute or two to execute after you click **Create**. Wait until that's done before proceeding to the next step.
 
@@ -20,13 +20,13 @@ Any settings will work, but you'll probably want to create a new Resource Group 
 
 ## 2. Create an Event Hub instance
 
-In the Microsoft Azure left menu, click the **+** button, then go to **Internet of Things** -> **Event Hubs**.
+In the Microsoft Azure left menu, click the **+** button, then go to **Internet of Things** -> **Event Hubs**. This will create an event hub namespace.
 
 Again, any settings will work - make sure the pricing tier you pick offers the desired performance.
 
 ![Configure Event Hub screenshot](screenshots/microsoft/create_event_hub_1.png)
 
-After clicking **Create**, go to **All resources** in the Azure menu on the left, select your newly created event hub, select **Event Hubs** and click **+ Event Hub**.
+After clicking **Create**, go to **All resources** in the Azure menu on the left, select your event hub namespace, select **Event Hubs** and click **+ Event Hub**.
 
 ![Configure Event Hub screenshot](screenshots/microsoft/create_event_hub_2.png)
 
@@ -50,5 +50,76 @@ Pick a name for the event source, and make sure it's in Event Hub mode and conne
 ## 4. Feed the Event Hub from mbed Cloud data events
 
 ### 4a. Create a virtual machine and run a node.js server on it
- 
+
+*TODO: finish this section*
+
 ### 4b. Use Microsoft Functions
+
+In the Microsoft Azure left menu, click the **+** button, then go to **Compute** -> **Function App**. Name your function and click Create.
+
+![Create Function App screenshot](screenshots/microsoft/create_function.png)
+
+Next, retrieve the connection string for your event hub namespace. Go to **All resources** -> **_ExampleEventHub_** -> **Overview** -> **Connection Strings**.
+
+![Find connection string screenshot](screenshots/microsoft/get_connection_string_1.png)
+
+Select the policy you want to use (default: **_RootManageSharedAccessKey_**) and copy one of the connection strings for it.
+
+![Find connection string screenshot](screenshots/microsoft/get_connection_string_2.png)
+
+Now go back to your newly created function and add the connection string as an app setting.
+You can find the relevant section under **All resources** -> **_ExampleFunctionApp-1_** -> **Platform features** -> **Application settings**.
+
+![Find connection string screenshot](screenshots/microsoft/add_app_setting_1.png)
+
+Add a new entry under **App settings** and name it HubConnectionString. As a value, paste the connection string you copied earlier.
+
+![Find connection string screenshot](screenshots/microsoft/add_app_setting_2.png)
+
+Let's connect the function to the event hub now. Go to **All resources** -> **_ExampleFunctionApp-1_** and click the green **+** button next to **Functions**.
+Pick **Webhook + API** and your preferred language, then click **Create this function**.
+
+![Find connection string screenshot](screenshots/microsoft/add_function_1.png)
+
+Then, under **Integrate**, click **New Output**, pick **Azure Event Hub**, and click **Select**.
+
+![Find connection string screenshot](screenshots/microsoft/add_function_2.png)
+
+Make sure you specify the (lower case) name of the event hub instance under **Event hub name** - in our case, that's **_exampleeventhub-1_** - and check that the event hub connection lists the correct app setting (**_HubConnectionString_**); then click **Save**.
+
+Lastly, go back to the function and type this code in:
+
+    module.exports = function (context, req) {
+        if (req.query.data || req.body) {
+            context.bindings.outputEventHubMessage = req.query.data || req.body;
+        }
+        context.res = {
+            status: 200,
+            body: "OK"
+        };
+    };
+
+![Find connection string screenshot](screenshots/microsoft/add_function_3.png)
+
+After typing the code in, click **</> Get function URL** and then **Copy**.
+You can now let the mbed Cloud know where to call you back when new data is available.
+
+Run this to register the webhook callback:
+
+1. Register the webhook callback URL:
+
+   curl -s -H "Authorization: Bearer yourmbedaccesskey" -H "Content-Type: application/json" -X PUT "https://api.connector.mbed.com/v2/notification/callback" --data '{"url": "https://examplefunctionapp-1.azurewebsites.net/api/HttpTriggerJS1?code=YourFunctionAccessCode=="}'
+
+2. Subscribe to data updates:
+
+   curl -s -H "Authorization: Bearer yourmbedaccesskey" -X PUT "https://api.connector.mbed.com/v2/subscriptions/yourendpointid/alldata/0/json/"
+
+(this assumes you are running the [mbed example client](http://github.com/CristianPrundeanuARM/exd-tsdb-mbed-client-connector) which sends data updates in JSON format).
+
+## 5. Visualize the data
+
+## Links
+
+* [Time Series Insights: Sending events and JSON data format](https://docs.microsoft.com/en-us/azure/time-series-insights/time-series-insights-send-events)
+* [Azure Functions JavaScript developer guide](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node)
+* [mbed Connector webhook](https://docs.mbed.com/docs/mbed-device-connector-web-interfaces/en/latest/api-reference/#registering-a-notification-callback)
