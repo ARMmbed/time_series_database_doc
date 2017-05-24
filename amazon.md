@@ -68,7 +68,7 @@ Authorize access to RDS from your computer using security groups [you can choose
 1. Create a configuration file named `rds.cnf`
    ```
    [client]
-   host=<ip address of RDS instance>
+   host=<hostname or ip address of RDS instance>
    port=3306
    user=tsdbuser
    password=<tsdb password>
@@ -89,7 +89,7 @@ Authorize access to RDS from your computer using security groups [you can choose
 1. In the directory `exd_mysql_lambda` create a file named `mysqldb.cfg`
    ```
    [mysql]
-   hostname: <ip address of RDS>
+   hostname: <hostname or ip address of RDS instance>
    username: tsdbuser
    password: <RDS password>
    database: tsdb
