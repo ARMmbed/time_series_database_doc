@@ -7,7 +7,7 @@ Here's how to get time series data into Amazon Web Services (AWS).
 1. Go to the IAM service in the AWS console.
 1. Click "Roles".
 1. Click "Create new role".
-1. Under "AWS Service Role" look for "AWS Lambda" and click the "Select" button. 
+1. Under "AWS Service Role" look for "AWS Lambda" and click the "Select" button.
 1. In the "Filter" field enter `AWSLambdaBasicExecutionRole` and click the checkbox. ![Actions](screenshots/amazon/attach_policy.png)
 1. Now in the "Filter" field enter `AWSLambdaVPCAccessExecutionRole` and click the checkbox.
 1. Click "Next step".
@@ -30,7 +30,7 @@ Here's how to get time series data into Amazon Web Services (AWS).
     * remember the ip address
 1. Click the "Create" button.
 1. After a few minutes your database is up and running: ![Actions](screenshots/amazon/rds_database_created.png)
-   
+
 ## Authorize access to your database
 
 Authorize access to RDS from your computer using security groups [you can choose to read here for more information](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithSecurityGroups.html).
@@ -133,7 +133,7 @@ Authorize access to RDS from your computer using security groups [you can choose
 
         curl -s -H "Authorization: Bearer yourauthtoken" \
         -H "Content-Type: application/json" \
-        --data '[{endpoint-name: "*", resource-path: ["/3200/0/5501/"]}]' \
+        --data '[{endpoint-name: "*", resource-path: ["/3200/0/5501"]}]' \
         -X PUT "https://api.connector.mbed.com/v2/subscriptions"
 
 
@@ -144,7 +144,7 @@ Authorize access to RDS from your computer using security groups [you can choose
 1. In QuickSight, choose “New Analysis”
 1. “New data set”
 1. “RDS”
-1. Choose Instance ID, database name, username, password, give it a data source name, 
+1. Choose Instance ID, database name, username, password, give it a data source name,
 1. “Create new data source”
 1. “Edit data set”
 1. “New field”
