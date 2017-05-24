@@ -91,10 +91,51 @@ Make sure you specify the (lower case) name of the event hub instance under **Ev
 
 Lastly, go back to the function and type this code in:
 
-    module.exports = function (context, req) {
-        if (req.query.data || req.body) {
-            context.bindings.outputEventHubMessage = req.query.data || req.body;
+    function atob(s)
+    {
+        var e = {}, i, k, v = [], r = '', w = String.fromCharCode;
+        var n = [[65, 91], [97, 123], [48, 58], [43, 44], [47, 48]];
+    
+        for (z in n)
+        {
+            for (i = n[z][0]; i < n[z][1]; i++)
+            {
+                v.push(w(i));
+            }
         }
+        for (i = 0; i < 64; i++)
+        {
+            e[v[i]] = i;
+        }
+    
+        for (i = 0; i < s.length; i+=72)
+        {
+            var b = 0, c, x, l = 0, o = s.substring(i, i+72);
+            for (x = 0; x < o.length; x++)
+            {
+                c = e[o.charAt(x)];
+                b = (b << 6) + c;
+                l += 6;
+                while (l >= 8)
+                {
+                    r += w((b >>> (l -= 8)) % 256);
+                }
+             }
+        }
+        return r;
+    }
+    
+    
+    module.exports = function (context, req) {
+        if (req.body) {
+            context.log(req.body);
+            if (req.body.notifications && req.body.notifications[0].payload) {
+                context.log(req.body.notifications[0].payload);
+                context.bindings.outputEventHubMessage = atob(req.body.notifications[0].payload);
+                context.log(context.bindings.outputEventHubMessage);
+            }
+        }
+    
         context.res = {
             status: 200,
             body: "OK"
@@ -111,13 +152,39 @@ Run this to register the webhook callback:
 
 1. Register the webhook callback URL:
 
-       curl -s -H "Authorization: Bearer your_mbed_access_key" -H "Content-Type: application/json" -X PUT "https://api.connector.mbed.com/v2/notification/callback" --data '{"url": "https://examplefunctionapp-1.azurewebsites.net/api/HttpTriggerJS1?code=YourFunctionAccessCode=="}'
+       MBED_ACCESS_KEY=your_mbed_access_key
+       AZURE_FUNCTION_URL=your_function_url # format:  https://examplefunctionapp-1.azurewebsites.net/api/HttpTriggerJS1?code=YourFunctionAccessCode==
+       curl -s -H "Authorization: Bearer $MBED_ACCESS_KEY" -H "Content-Type: application/json" -X PUT "https://api.connector.mbed.com/notification/callback" --data '{"url": "'"$AZURE_FUNCTION_URL"'"}'
 
 2. Subscribe to data updates:
 
-       curl -s -H "Authorization: Bearer your_mbed_access_key" -X PUT "https://api.connector.mbed.com/v2/subscriptions/your_endpoint_id/alldata/0/json/"
+       DEVICE_ID=your_device_id
+       DEVICE_RESOURCE=alldata/0/json
+       curl -s -H "Authorization: Bearer $MBED_ACCESS_KEY" -X PUT "https://api.connector.mbed.com/subscriptions/$DEVICE_ID/$DEVICE_RESOURCE/"
 
-(this assumes you are running the [mbed example client](http://github.com/CristianPrundeanuARM/exd-tsdb-mbed-client-connector) which sends data updates in JSON format).
+_(this assumes you are running the [mbed example client](http://github.com/CristianPrundeanuARM/exd-tsdb-mbed-client-connector) which sends data updates in JSON format)_.
+
+3. Unsubscribe from data updates:
+
+       curl -s -H "Authorization: Bearer $MBED_ACCESS_KEY" -X DELETE "https://api.connector.mbed.com/subscriptions/$DEVICE_ID/$DEVICE_RESOURCE/"
+
+The data will be in JSON format:
+
+   * for new data:
+
+    { notifications: 
+        [ { ep: 'your_device_id',
+           path: '/alldata/0/json',
+           ct: 'text/plain',
+           payload: 'base64_encoded_payload=',
+           'max-age': 0 } ] }
+
+   * for registration updates:
+
+    { 'reg-updates': 
+       [ { ep: 'your_device_id',
+           ept: 'test',
+           resources: [Object containing exposed resources] } ] }
 
 ### 4b. Create a virtual machine and run a node.js server on it
 
