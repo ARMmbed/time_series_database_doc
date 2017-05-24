@@ -89,33 +89,26 @@ Make sure you specify the (lower case) name of the event hub instance under **Ev
 
 Lastly, go back to the function and type this code in:
 
-    function atob(s)
-    {
+    function atob(s) {
         var e = {}, i, k, v = [], r = '', w = String.fromCharCode;
         var n = [[65, 91], [97, 123], [48, 58], [43, 44], [47, 48]];
     
-        for (z in n)
-        {
-            for (i = n[z][0]; i < n[z][1]; i++)
-            {
+        for (z in n) {
+            for (i = n[z][0]; i < n[z][1]; i++) {
                 v.push(w(i));
             }
         }
-        for (i = 0; i < 64; i++)
-        {
+        for (i = 0; i < 64; i++) {
             e[v[i]] = i;
         }
     
-        for (i = 0; i < s.length; i+=72)
-        {
+        for (i = 0; i < s.length; i+=72) {
             var b = 0, c, x, l = 0, o = s.substring(i, i+72);
-            for (x = 0; x < o.length; x++)
-            {
+            for (x = 0; x < o.length; x++) {
                 c = e[o.charAt(x)];
                 b = (b << 6) + c;
                 l += 6;
-                while (l >= 8)
-                {
+                while (l >= 8) {
                     r += w((b >>> (l -= 8)) % 256);
                 }
              }
@@ -123,14 +116,10 @@ Lastly, go back to the function and type this code in:
         return r;
     }
     
-    
     module.exports = function (context, req) {
         if (req.body) {
-            context.log(req.body);
             if (req.body.notifications && req.body.notifications[0].payload) {
-                context.log(req.body.notifications[0].payload);
                 context.bindings.outputEventHubMessage = atob(req.body.notifications[0].payload);
-                context.log(context.bindings.outputEventHubMessage);
             }
         }
     
