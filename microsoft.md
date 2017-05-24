@@ -22,7 +22,7 @@ Next, add a data access policy:
 in the Microsoft Azure left menu, click **All resources**, then go to your newly created Time Series Insights environment, select **Data Access Policies** and click the **+ Add** button on the top right.
 Enter every user (by Microsoft account), including yourself, who has access to the Time Series (Contributor to add data and/or Reader to see the data).
 
-![Configure TSI screenshot](screenshots/microsoft/add_tsi_data_access.png)
+![Add TSI data access screenshot](screenshots/microsoft/add_tsi_data_access.png)
 
 ## 2. Create an Event Hub instance
 
@@ -30,11 +30,11 @@ In the Microsoft Azure left menu, click the **+** button, then go to **Internet 
 
 Again, any settings will work - make sure the pricing tier you pick offers the desired performance.
 
-![Configure Event Hub screenshot](screenshots/microsoft/create_event_hub_1.png)
+![Create Event Hub namespace screenshot](screenshots/microsoft/create_event_hub_1.png)
 
 After clicking **Create**, go to **All resources** in the Azure menu on the left, select your event hub namespace, select **Event Hubs** and click **+ Event Hub**.
 
-![Configure Event Hub screenshot](screenshots/microsoft/create_event_hub_2.png)
+![Create Event Hub instance screenshot](screenshots/microsoft/create_event_hub_2.png)
 
 Enter a name for the event hub instance, e.g. _ExampleEventHub-1_. You can tweak any other settings before clicking **Create**.
 
@@ -42,7 +42,7 @@ Enter a name for the event hub instance, e.g. _ExampleEventHub-1_. You can tweak
 
 In the Microsoft Azure left menu, click **All resources**, then go to your newly created Time Series Insights environment, select **Event Sources** and click the **+ Add** button on the top right.
 
-![Configure Event Source screenshot](screenshots/microsoft/create_event_source_1.png)
+![Create Event Source screenshot](screenshots/microsoft/create_event_source_1.png)
 
 Pick a name for the event source, and make sure it's in Event Hub mode and connected to the correct event hub instance.
 
@@ -67,25 +67,25 @@ Next, retrieve the connection string for your event hub namespace. Go to **All r
 
 Select the policy you want to use (default: **_RootManageSharedAccessKey_**) and copy one of the connection strings for it.
 
-![Find connection string screenshot](screenshots/microsoft/get_connection_string_2.png)
+![Copy connection string screenshot](screenshots/microsoft/get_connection_string_2.png)
 
 Now go back to your newly created function and add the connection string as an app setting.
 You can find the relevant section under **All resources** -> **_ExampleFunctionApp-1_** -> **Platform features** -> **Application settings**.
 
-![Find connection string screenshot](screenshots/microsoft/add_app_setting_1.png)
+![Add app setting screenshot](screenshots/microsoft/add_app_setting_1.png)
 
 Add a new entry under **App settings** and name it HubConnectionString. As a value, paste the connection string you copied earlier.
 
-![Find connection string screenshot](screenshots/microsoft/add_app_setting_2.png)
+![Add app setting screenshot](screenshots/microsoft/add_app_setting_2.png)
 
 Let's connect the function to the event hub now. Go to **All resources** -> **_ExampleFunctionApp-1_** and click the green **+** button next to **Functions**.
 Pick **Webhook + API** and your preferred language, then click **Create this function**.
 
-![Find connection string screenshot](screenshots/microsoft/add_function_1.png)
+![Add function screenshot](screenshots/microsoft/add_function_1.png)
 
 Then, under **Integrate**, click **New Output**, pick **Azure Event Hub**, and click **Select**.
 
-![Find connection string screenshot](screenshots/microsoft/add_function_2.png)
+![Add function screenshot](screenshots/microsoft/add_function_2.png)
 
 Make sure you specify the (lower case) name of the event hub instance under **Event hub name** - in our case, that's **_exampleeventhub-1_** - and check that the event hub connection lists the correct app setting (**_HubConnectionString_**); then click **Save**.
 
@@ -101,7 +101,7 @@ Lastly, go back to the function and type this code in:
         };
     };
 
-![Find connection string screenshot](screenshots/microsoft/add_function_3.png)
+![Enter function code screenshot](screenshots/microsoft/add_function_3.png)
 
 After typing the code in, click **</> Get function URL** and then **Copy**.
 You can now let the mbed Cloud know where to call you back when new data is available.
