@@ -18,6 +18,12 @@ Any settings will work, but you'll probably want to create a new Resource Group 
 
 ![Configure TSI screenshot](screenshots/microsoft/create_tsi_2.png)
 
+Next, add a data access policy:
+in the Microsoft Azure left menu, click **All resources**, then go to your newly created Time Series Insights environment, select **Data Access Policies** and click the **+ Add** button on the top right.
+Enter every user (by Microsoft account), including yourself, who has access to the Time Series (Contributor to add data and/or Reader to see the data).
+
+![Configure TSI screenshot](screenshots/microsoft/add_tsi_data_access.png)
+
 ## 2. Create an Event Hub instance
 
 In the Microsoft Azure left menu, click the **+** button, then go to **Internet of Things** -> **Event Hubs**. This will create an event hub namespace.
