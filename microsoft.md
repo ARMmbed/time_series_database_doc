@@ -57,7 +57,20 @@ Pick a name for the event source, and make sure it's in Event Hub mode and conne
 
 ### 4a. Create a virtual machine and run a node.js server on it
 
-*TODO: finish this section*
+*TODO: add more detail to this section*
+
+* create a VM
+* install node.js
+* clone https://github.com/CristianPrundeanuARM/exd-tsdb-cloud-connector-jsnode
+* configure the **_.env_** file:
+
+      ACCESS_KEY=your_mbed_access_key_here
+      PORT=8080
+      HOST=0.0.0.0
+      AZURE_CONNECTION_STRING=Endpoint=sb://exampleeventhub.servicebus.windows.net/;SharedAccessKeyName=EventHubPolicy1;SharedAccessKey=your_event_hub_access_key;EntityPath=exampleeventhub-1
+
+* run the app: **_node app.js_**
+* browse to the app's web interface (http://your_VM_IP_address:8080) and subscribe to JSON data updates (called "**Aggregated data**" on the web interface).
 
 ### 4b. Use Microsoft Functions
 
