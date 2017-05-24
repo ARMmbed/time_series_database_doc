@@ -7,7 +7,7 @@ The conversion from mbed cloud data format to Graphite data format is done withi
 ## Preparing Your Environment
 
 * Setup an AWS account.
-* Create and test the mbed button example.  Make sure to keep the **AccessKey** token around.  It will be needed in the `Register Webhook` step.
+* Create and test the [mbed client os example](https://github.com/ARMmbed/mbed-client-quickstart).  Make sure to keep the **AccessKey** token around.  It will be needed in the `Register Webhook` step.
 
 
 
@@ -85,7 +85,7 @@ The Gateway API / Lambda service needs to be able to get to and interact with th
 1. After reviewing the settings, click `Create Function`.
 
 
-#### Test the Lambda Function
+<!--- #### Test the Lambda Function --->
 
 
 
@@ -102,7 +102,7 @@ The Gateway API / Lambda service needs to be able to get to and interact with th
 1. Choose `PUT` from within the method selection, and click the neighboring check mark.
 1. A setup page is presented.  Select `Lambda Function` if it is not already chosen.  Select the region where the Lambda function was defined.  Then enter the name of the Lambda function.  Finally, click `Save` and `Ok`.
 
-#### Test the API Gateway
+<!--- #### Test the API Gateway --->
 
 
 ### Publish the API
