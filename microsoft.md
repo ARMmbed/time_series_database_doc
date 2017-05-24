@@ -124,8 +124,20 @@ Run this to register the webhook callback:
 
 ## 5. Visualize the data
 
+In the Microsoft Azure left menu, click **All resources**, then go to your Time Series Insights environment's overview, and copy its access URL.
+
+![Visualize data screenshot](screenshots/microsoft/visualize_data_1.png)
+
+Finally, browse to the TSI instance's URL and configure your view of the data to suit your needs. The URL can be shared with anyone who is added to the TSI's data access policies as a Reader.
+
+![Visualize data screenshot](screenshots/microsoft/visualize_data_2.png)
+
+If you need to roll out your own analysis/visualization solution, an API is available to access the data. [Documentation for the API](https://docs.microsoft.com/en-us/rest/api/time-series-insights/time-series-insights-reference-queryapi) is maintained by Microsoft.
+
 ## Links
 
 * [Time Series Insights: Sending events and JSON data format](https://docs.microsoft.com/en-us/azure/time-series-insights/time-series-insights-send-events)
 * [Azure Functions JavaScript developer guide](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node)
+* [Visualizing Time Series Insights data - sample and tutorial](https://insights.timeseries.azure.com/samples)
+* [Time Series Insights data API](https://docs.microsoft.com/en-us/rest/api/time-series-insights/time-series-insights-reference-queryapi)
 * [mbed Connector webhook](https://docs.mbed.com/docs/mbed-device-connector-web-interfaces/en/latest/api-reference/#registering-a-notification-callback)
