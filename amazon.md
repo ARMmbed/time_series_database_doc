@@ -1,8 +1,10 @@
 # Amazon Web Services
 
-Here's how to get time series data into Amazon Web Services (AWS).
+This tutorial sets up recording and displaying of time series data using Amazon Web Services (AWS).
 
 Image of amazon data flow: ![](aws_flow.svg)
+
+ARM mbed connector will send data to Amazon Lambda. Then Amazon Lambda will then store a timestamp and entry into a database.  This database is queried by Amazon's QuickSight to display the data in a nice chart.
 
 ## Setup IAM Role
 
