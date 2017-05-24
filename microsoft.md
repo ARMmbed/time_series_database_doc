@@ -55,24 +55,7 @@ Pick a name for the event source, and make sure it's in Event Hub mode and conne
 
 ## 4. Feed the Event Hub from mbed Cloud data events
 
-### 4a. Create a virtual machine and run a node.js server on it
-
-*TODO: add more detail to this section*
-
-* create a VM
-* install node.js
-* clone https://github.com/CristianPrundeanuARM/exd-tsdb-cloud-connector-jsnode
-* configure the **_.env_** file:
-
-      ACCESS_KEY=your_mbed_access_key_here
-      PORT=8080
-      HOST=0.0.0.0
-      AZURE_CONNECTION_STRING=Endpoint=sb://exampleeventhub.servicebus.windows.net/;SharedAccessKeyName=EventHubPolicy1;SharedAccessKey=your_event_hub_access_key;EntityPath=exampleeventhub-1
-
-* run the app: **_node app.js_**
-* browse to the app's web interface (http://your_VM_IP_address:8080) and subscribe to JSON data updates (called "**Aggregated data**" on the web interface).
-
-### 4b. Use Microsoft Functions
+### 4a. Use Microsoft Functions
 
 In the Microsoft Azure left menu, click the **+** button, then go to **Compute** -> **Function App**. Name your function and click Create.
 
@@ -134,6 +117,25 @@ Run this to register the webhook callback:
    curl -s -H "Authorization: Bearer yourmbedaccesskey" -X PUT "https://api.connector.mbed.com/v2/subscriptions/yourendpointid/alldata/0/json/"
 
 (this assumes you are running the [mbed example client](http://github.com/CristianPrundeanuARM/exd-tsdb-mbed-client-connector) which sends data updates in JSON format).
+
+### 4b. Create a virtual machine and run a node.js server on it
+
+*TODO: add more detail to this section*
+
+As an alternative to Microsoft Functions, you can deploy your own VM and use an app to pull data from mbed Cloud and send it as events to Microsoft's Event Hub.
+
+* create a VM
+* install node.js
+* clone https://github.com/CristianPrundeanuARM/exd-tsdb-cloud-connector-jsnode
+* configure the **_.env_** file:
+
+      ACCESS_KEY=your_mbed_access_key_here
+      PORT=8080
+      HOST=0.0.0.0
+      AZURE_CONNECTION_STRING=Endpoint=sb://exampleeventhub.servicebus.windows.net/;SharedAccessKeyName=EventHubPolicy1;SharedAccessKey=your_event_hub_access_key;EntityPath=exampleeventhub-1
+
+* run the app: **_node app.js_**
+* browse to the app's web interface (http://your_VM_IP_address:8080) and subscribe to JSON data updates (called "**Aggregated data**" on the web interface).
 
 ## 5. Visualize the data
 
