@@ -99,6 +99,7 @@ Lastly, go back to the function and type this code in:
             status: 200,
             body: "OK"
         };
+        context.done();
     };
 
 ![Enter function code screenshot](screenshots/microsoft/add_function_3.png)
@@ -110,11 +111,11 @@ Run this to register the webhook callback:
 
 1. Register the webhook callback URL:
 
-   curl -s -H "Authorization: Bearer yourmbedaccesskey" -H "Content-Type: application/json" -X PUT "https://api.connector.mbed.com/v2/notification/callback" --data '{"url": "https://examplefunctionapp-1.azurewebsites.net/api/HttpTriggerJS1?code=YourFunctionAccessCode=="}'
+       curl -s -H "Authorization: Bearer your_mbed_access_key" -H "Content-Type: application/json" -X PUT "https://api.connector.mbed.com/v2/notification/callback" --data '{"url": "https://examplefunctionapp-1.azurewebsites.net/api/HttpTriggerJS1?code=YourFunctionAccessCode=="}'
 
 2. Subscribe to data updates:
 
-   curl -s -H "Authorization: Bearer yourmbedaccesskey" -X PUT "https://api.connector.mbed.com/v2/subscriptions/yourendpointid/alldata/0/json/"
+       curl -s -H "Authorization: Bearer your_mbed_access_key" -X PUT "https://api.connector.mbed.com/v2/subscriptions/your_endpoint_id/alldata/0/json/"
 
 (this assumes you are running the [mbed example client](http://github.com/CristianPrundeanuARM/exd-tsdb-mbed-client-connector) which sends data updates in JSON format).
 
@@ -132,7 +133,7 @@ As an alternative to Microsoft Functions, you can deploy your own VM and use an 
       ACCESS_KEY=your_mbed_access_key_here
       PORT=8080
       HOST=0.0.0.0
-      AZURE_CONNECTION_STRING=Endpoint=sb://exampleeventhub.servicebus.windows.net/;SharedAccessKeyName=EventHubPolicy1;SharedAccessKey=your_event_hub_access_key;EntityPath=exampleeventhub-1
+      AZURE_CONNECTION_STRING=Endpoint=sb://exampleeventhub.servicebus.windows.net/;SharedAccessKeyName=EventHubPolicy1;SharedAccessKey=YourEventHubAccessKey;EntityPath=exampleeventhub-1
 
 * run the app: **_node app.js_**
 * browse to the app's web interface (http://your_VM_IP_address:8080) and subscribe to JSON data updates (called "**Aggregated data**" on the web interface).
