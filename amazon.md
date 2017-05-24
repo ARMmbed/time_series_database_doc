@@ -8,6 +8,8 @@ ARM mbed connector will send data to Amazon Lambda. Then Amazon Lambda will then
 
 ## Setup IAM Role
 
+Identity and Access Management (IAM) lets you set secure access for your various Amazon services.
+
 1. Go to the IAM service in the AWS console.
 1. Click "Roles".
 1. Click "Create new role".
