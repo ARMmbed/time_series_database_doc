@@ -160,3 +160,6 @@ Use your [mbed Connector access key](https://connector.mbed.com/#accesskeys) and
 1. highlight “date” and “value”
 1. click the arrows next to “Field wells”
 1. X axis dropdown, aggregate by hour
+
+The final plot may look something like this:
+![Final](screenshots/amazon/quicksight_final_chart.png)
