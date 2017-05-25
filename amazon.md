@@ -134,7 +134,7 @@ Authorize access to RDS from your computer using security groups [you can choose
 
 ## Register webhook callback
 
-1. Copy your [mbed Connector access key](https://connector.mbed.com/#accesskeys): ![Actions](screenshots/mbed/mbed_access_key.png)
+1. Copy your [mbed Connector access key](https://connector.mbed.com/#accesskeys), which is a long string of letters: ![Actions](screenshots/mbed/mbed_access_key.png)
 1. Also copy your [endpoint id](https://connector.mbed.com/#endpoints)
 1. In the command below replace `yourmbedaccesskey` with your info, and run the command:
 
