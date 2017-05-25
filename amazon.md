@@ -129,7 +129,7 @@ Authorize access to RDS from your computer using security groups [you can choose
     * Integration type should be `Lambda`
     * Lambda function: `mbed_time_series_webhook`
 1. Click on "Actions" and click on "Deploy API". ![Actions](screenshots/amazon/deploy_api.png)
-1. Click on `Stages` -> `webhook` -> `PUT` to see the URL to use as the webhook callback below.
+1. Click on `Stages` -> `webhook` -> `PUT` to see the URL to use as the webhook callback below. ![Action GET](screenshots/amazon/api_gateway_webhook_url.png)
 
 
 ## Register webhook callback
