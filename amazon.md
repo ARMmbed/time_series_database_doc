@@ -107,6 +107,7 @@ Authorize access to RDS from your computer using security groups [you can choose
     * Trigger: none (just click "Next")
     * Name: `mbed_time_series_webhook`
     * Code: upload a the .zip file from before
+    * Handler: mysql_lambda.webhook_handler
 1. In `Advanced Settings`, choose the VPC that RDS was created in, and add all the subnets.
 1. `default` security group
 
