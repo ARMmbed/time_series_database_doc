@@ -8,7 +8,7 @@ ARM mbed connector will send data to Amazon Lambda. Then Amazon Lambda will then
 
 ## 1. Setup IAM Role
 
-Identity and Access Management (IAM) lets you set secure access for your various Amazon services.
+Identity and Access Management (IAM) lets you set secure access for your various Amazon services.  Here you'll set up an IAM Role that allows Lambda to connect to the RDS VPC.
 
 1. Go to the IAM service in the AWS console.
 1. Click "Roles".
@@ -22,6 +22,8 @@ Identity and Access Management (IAM) lets you set secure access for your various
 1. The screen should display: ![Actions](screenshots/amazon/aim_role_finish.png)
 
 ## 2. Create RDS database
+
+RDS is the database that will hold the time series data.
 
 1. In Amazon console, click "Services" and click "RDS"
 1. Click "Get Started"
@@ -38,6 +40,10 @@ Identity and Access Management (IAM) lets you set secure access for your various
 1. After a few minutes your database is up and running: ![Actions](screenshots/amazon/rds_database_created.png)
    
 ## 3. Authorize access to your database
+
+AWS uses security groups to control access to some resources including RDS.
+Here we set up security groups to allow access from your development machine's
+IP.
 
 ### 3a. Create a security group to allow access to RDS from your Desktop
 
@@ -68,6 +74,8 @@ Authorize access to RDS from your computer using security groups [you can choose
 
 ## 4. Create the events table
 
+Here you'll create the RDS schema for the data.
+
 1. Download the [MySQL Shell](https://dev.mysql.com/downloads/shell/)
 1. Create a configuration file named `rds.cnf`
    ```
@@ -88,6 +96,9 @@ Authorize access to RDS from your computer using security groups [you can choose
 1. type `quit;`
 
 ## 5. Create the API Gateway Lambda function
+
+Lambda connects the webhook API Gateway endpoint to the RDS database so when an
+mbed notification is sent to the webhook, the data ends up in the database.
 
 1. Clone this [this repo](https://github.com/ARMmbed/exd_mysql_lambda)
 1. In the directory `exd_mysql_lambda` create a file named `mysqldb.cfg`
@@ -115,6 +126,9 @@ Authorize access to RDS from your computer using security groups [you can choose
 
 ## 6. Configure the API Gateway
 
+Here we set up the webhook API endpoint so that mbed connector will have a place
+to send notifications.
+
 1. Click "Services" in the upper-left to display a large menu of services. ![Amazon Services](screenshots/amazon/aws_services.png)
 1. Click "API Gateway" listed under "Application Services". ![API Gateway](screenshots/amazon/app_services.png)
 1. Click "Get Started", this will open a page to create a new API.
@@ -135,6 +149,8 @@ Authorize access to RDS from your computer using security groups [you can choose
 
 ## 7. Register webhook callback
 
+Here we tell mbed Connector to send notifications to our webhook.
+
 1. Copy your [mbed Connector access key](https://connector.mbed.com/#accesskeys), which is a long string of letters: ![Actions](screenshots/mbed/mbed_access_key.png)
 1. Also copy your [endpoint id](https://connector.mbed.com/#endpoints)
 1. In the command below replace `yourmbedaccesskey` with your info, and run the command:
@@ -151,6 +167,8 @@ Authorize access to RDS from your computer using security groups [you can choose
 
 
 ## 8. View data using QuickSight
+
+Here we'll set up QuickSight to pull data from RDS and create a graph.
 
 1. Sign up for [QuickSight](https://quicksight.aws/)
 1. [Authorize](http://docs.aws.amazon.com/quicksight/latest/user/enabling-access-rds.html) connection from QuickSight to RDS
