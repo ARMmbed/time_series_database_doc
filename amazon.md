@@ -6,7 +6,7 @@ Image of amazon data flow: ![](aws_flow.svg)
 
 ARM mbed connector will send data to Amazon Lambda. Then Amazon Lambda will then store a timestamp and entry into a database.  This database is queried by Amazon's QuickSight to display the data in a nice chart.
 
-## Setup IAM Role
+## 1. Setup IAM Role
 
 Identity and Access Management (IAM) lets you set secure access for your various Amazon services.
 
@@ -21,7 +21,7 @@ Identity and Access Management (IAM) lets you set secure access for your various
 1. Click the "Create role" button.
 1. The screen should display: ![Actions](screenshots/amazon/aim_role_finish.png)
 
-## Create RDS database
+## 2. Create RDS database
 
 1. In Amazon console, click "Services" and click "RDS"
 1. Click "Get Started"
@@ -37,9 +37,9 @@ Identity and Access Management (IAM) lets you set secure access for your various
 1. Click the "Create" button.
 1. After a few minutes your database is up and running: ![Actions](screenshots/amazon/rds_database_created.png)
    
-## Authorize access to your database
+## 3. Authorize access to your database
 
-### Create a security group to allow access to RDS from your Desktop
+### 3a. Create a security group to allow access to RDS from your Desktop
 
 Authorize access to RDS from your computer using security groups [you can choose to read here for more information](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithSecurityGroups.html).
 
@@ -58,7 +58,7 @@ Authorize access to RDS from your computer using security groups [you can choose
         * Note that this only adds your one IP address to the access list.  If your IP address changes, you need to update this CIDR to match your new IP address.  Alternatively, if you know your IP address block, you can enter that here.
 1. Click `Create`
 
-### Add this security group to the security groups used by your RDS instance
+### 3b. Add this security group to the security groups used by your RDS instance
 
 1. Open your RDS instance in the AWS console.
 1. Click "Actions" then click "Modify"
@@ -66,7 +66,7 @@ Authorize access to RDS from your computer using security groups [you can choose
 1. Check "Apply Immediately"
 1. Click "Confirm" button.
 
-## Create the events table
+## 4. Create the events table
 
 1. Download the [MySQL Shell](https://dev.mysql.com/downloads/shell/)
 1. Create a configuration file named `rds.cnf`
@@ -87,7 +87,7 @@ Authorize access to RDS from your computer using security groups [you can choose
     * output: `Query OK, 0 rows affected (0.09 sec)`
 1. type `quit;`
 
-## Create the API Gateway Lambda function
+## 5. Create the API Gateway Lambda function
 
 1. Clone this [this repo](https://github.com/ARMmbed/exd_mysql_lambda)
 1. In the directory `exd_mysql_lambda` create a file named `mysqldb.cfg`
@@ -113,7 +113,7 @@ Authorize access to RDS from your computer using security groups [you can choose
 
 **TODO**: add a screenshot here of the finished Lambda function screen
 
-## Configure the API Gateway
+## 6. Configure the API Gateway
 
 1. Click "Services" in the upper-left to display a large menu of services. ![Amazon Services](screenshots/amazon/aws_services.png)
 1. Click "API Gateway" listed under "Application Services". ![API Gateway](screenshots/amazon/app_services.png)
@@ -133,7 +133,7 @@ Authorize access to RDS from your computer using security groups [you can choose
 1. Click on `Stages` -> `webhook` -> `PUT` to see the URL to use as the webhook callback below. ![Action GET](screenshots/amazon/api_gateway_webhook_url.png)
 
 
-## Register webhook callback
+## 7. Register webhook callback
 
 1. Copy your [mbed Connector access key](https://connector.mbed.com/#accesskeys), which is a long string of letters: ![Actions](screenshots/mbed/mbed_access_key.png)
 1. Also copy your [endpoint id](https://connector.mbed.com/#endpoints)
@@ -150,7 +150,7 @@ Authorize access to RDS from your computer using security groups [you can choose
         -X PUT "https://api.connector.mbed.com/v2/subscriptions/yourendpointid/3200/0/5501/"
 
 
-## View data using QuickSight
+## 8. View data using QuickSight
 
 1. Sign up for [QuickSight](https://quicksight.aws/)
 1. [Authorize](http://docs.aws.amazon.com/quicksight/latest/user/enabling-access-rds.html) connection from QuickSight to RDS
