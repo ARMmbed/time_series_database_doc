@@ -12,7 +12,7 @@ The steps here will use the mbed web-compiler. This will load an operating syste
 
 1. Login to [connector.mbed.com](https://connector.mbed.com), create an account if you need to.
 1. Login to [developer.mbed.org](https://developer.mbed.org/) with the same account.
-1. Physically connect and enthernet cable and power cable to your board.
+1. Physically connect and Ethernet cable and power cable to your board.
 1. Visit [mbed-os-example-client](https://developer.mbed.org/teams/mbed-os-examples/code/mbed-os-example-client/).
 1. Click the button "Import into Compiler" in the upper right.
 1. A new browser window opens to the mbed web compiler. Click the "import" button to begin the import process.
