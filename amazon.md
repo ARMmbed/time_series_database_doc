@@ -156,12 +156,8 @@ Authorize access to RDS from your computer using security groups [you can choose
 1. [Authorize](http://docs.aws.amazon.com/quicksight/latest/user/enabling-access-rds.html) connection from QuickSight to RDS
 1. On the QuickSight main page click the name of your RDS Instance, "tsdb" in this case: ![Actions](screenshots/amazon/quicksight_main.png)
 1. Enter the "username" and "password" for your RDS so that QuickSight may access it and click "Create data source". ![Actions](screenshots/amazon/quicksight_rds_setup.png)
-1. Under "Fields" select "edit analysis data sets": ![Actions](screenshots/amazon/quicksight_edit_analysis.png)
-1. Click the "Edit" link for your data set.
-1. Click the "New Field" button.
-1. parseDate({timestamp}, “yyyy-MM-dd HH:mm:ss”)
-1. name the new field ‘date"
-1. “Save and Visualize”
+1. Select "events", then click on "select"
+1. Select "Directly query your data", then click on "visualize"
 1. highlight “date” and “value”
 1. click the arrows next to “Field wells”
 1. X axis dropdown, aggregate by hour
