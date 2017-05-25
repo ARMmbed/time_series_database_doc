@@ -93,7 +93,7 @@ Authorize access to RDS from your computer using security groups [you can choose
 1. In the directory `exd_mysql_lambda` create a file named `mysqldb.cfg`
    ```
    [mysql]
-   hostname: <hostname or ip address of RDS instance>
+   hostname: <RDS instance endpoint hostname>
    username: tsdbuser
    password: <RDS password>
    database: tsdb
