@@ -28,16 +28,5 @@ The steps here will use the mbed web-compiler. This will load an operating syste
 1. Once it's done copying the file (which takes a few seconds at most), restart the board.
 1. Visit [your connected devices section of connector.mbed.com](https://connector.mbed.com/#endpoints) and you should see your device listed: ![Actions](screenshots/mbed/connected_devices.png)
 
-# Pick a Time Series Platform
 
-**TODO**: flush out once we have more platforms than just Amazon.
-
-# [Microsoft Azure](microsoft.md)
-
-# [InfluxDB](influxdb.md)
-
-# [Google Cloud](google.md)
-
-# [Graphite](graphite.md)
-
-# [Amazon](amazon.md)
+Now that mbed Connector is configured, set up services on [Amazon](amazon.md).

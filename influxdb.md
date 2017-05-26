@@ -1,3 +1,0 @@
-# InfluxDB
-
-**TODO**: finish me

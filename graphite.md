@@ -1,3 +1,0 @@
-# Graphite
-
-**TODO**: finish me
