@@ -106,7 +106,7 @@ mbed notification is sent to the webhook, the data ends up in the database.
    [mysql]
    hostname: <RDS instance endpoint hostname>
    username: tsdbuser
-   password: <RDS password>
+   password: <tsdb password>
    database: tsdb
    table: events
    ```
