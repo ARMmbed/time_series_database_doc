@@ -156,7 +156,7 @@ Here we tell mbed Connector to send notifications to our webhook.
 
         curl -s -H "Authorization: Bearer yourmbedaccesskey" \
         -H "Content-Type: application/json" \
-        --data '{"url": "https://yourapidomain.amazonaws.com/test/webhook"}' \
+        --data '{"url": "https://yourapidomain"}' \
         -X PUT "https://api.connector.mbed.com/v2/notification/callback"
 
 1. In the command below, replace both `yourmbedaccesskey` and `yourendpointid` and run the command:
