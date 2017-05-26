@@ -4,11 +4,15 @@ Microsoft offers a 30-day trial account with $200 to spend on Azure services dur
 
 Subscribe link: https://azure.microsoft.com/en-us/services/time-series-insights/
 
-*TODO: add diagram of data flow for Azure TSI*
+**Data flow:**
+Device --> mbed Cloud --> Microsoft Function (via webhook) --> Event Hub --> Event Source --> Time Series Insights
+<!-- TODO: add diagram of data flow for Azure TSI -->
 
 *Note*: Some of the steps below will take a minute or two to execute after you click **Create**. Wait until that's done before proceeding to the next step.
 
 ## 1. Create a Time Series Insights instance
+
+<!-- TODO: short explanation of what each of these blocks is -->
 
 In the Microsoft Azure left menu, click the **+** button, then go to **Internet of Things** -> **Time Series Insights**.
 
@@ -29,6 +33,8 @@ Enter every user (by Microsoft account), including yourself, who has access to t
 In the Microsoft Azure left menu, click the **+** button, then go to **Internet of Things** -> **Event Hubs**. This will create an event hub namespace.
 
 Again, any settings will work - make sure the pricing tier you pick offers the desired performance.
+
+*Note: You will have to pick your own name for the event hub namespace, since this will be part of a public domain name and can't be a duplicate of an existing namespace.*
 
 ![Create Event Hub namespace screenshot](screenshots/microsoft/create_event_hub_1.png)
 
@@ -55,7 +61,11 @@ Pick a name for the event source, and make sure it's in Event Hub mode and conne
 
 ## 4. Use Microsoft Functions to feed the Event Hub from mbed Cloud data events
 
+<!-- TODO: number the steps -->
+
 In the Microsoft Azure left menu, click the **+** button, then go to **Compute** -> **Function App**. Name your function and click Create.
+
+*Note: You will have to pick your own name for the function app, since this will be part of a public domain name and can't be a duplicate of an existing function app.*
 
 ![Create Function App screenshot](screenshots/microsoft/create_function.png)
 
@@ -117,10 +127,8 @@ Lastly, go back to the function and type this code in:
     }
     
     module.exports = function (context, req) {
-        if (req.body) {
-            if (req.body.notifications && req.body.notifications[0].payload) {
-                context.bindings.outputEventHubMessage = atob(req.body.notifications[0].payload);
-            }
+        if (req.body && req.body.notifications && req.body.notifications[0].payload) {
+            context.bindings.outputEventHubMessage = atob(req.body.notifications[0].payload);
         }
     
         context.res = {
@@ -139,7 +147,7 @@ Run this to register the webhook callback:
 
 1. Register the webhook callback URL:
 
-       MBED_ACCESS_KEY=your_mbed_access_key
+       MBED_ACCESS_KEY=your_mbed_access_key # get this from https://connector.mbed.com/#accesskeys
        AZURE_FUNCTION_URL=your_function_url # format:  https://examplefunctionapp-1.azurewebsites.net/api/HttpTriggerJS1?code=YourFunctionAccessCode==
        curl -s -H "Authorization: Bearer $MBED_ACCESS_KEY" -H "Content-Type: application/json" -X PUT "https://api.connector.mbed.com/notification/callback" --data '{"url": "'"$AZURE_FUNCTION_URL"'"}'
 
