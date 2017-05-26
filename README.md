@@ -25,4 +25,5 @@ The steps here will use the mbed web-compiler. This will load an operating syste
 1. Visit [your connected devices section of connector.mbed.com](https://connector.mbed.com/#endpoints) and you should see your device listed: ![Actions](screenshots/mbed/connected_devices.png)
 
 
-Now that mbed Connector is configured, set up services on [Amazon](amazon.md).
+Now that mbed Connector is configured, set up services on [Amazon](amazon.md) or
+[Azure](microsoft.md).
