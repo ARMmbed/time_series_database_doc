@@ -142,7 +142,7 @@ to send notifications.
     * Integration type should be `Lambda`
     * Lambda function: `mbed_time_series_webhook`
 1. Click on "Actions" and click on "Deploy API". ![Actions](screenshots/amazon/deploy_api.png)
-1. Click on `Stages` -> `webhook` -> `PUT` to see the URL to use as the webhook callback below. ![Action GET](screenshots/amazon/api_gateway_webhook_url.png)
+1. Click on `Stages` -> `webhook` -> `PUT` to see the URL to use as `yourapidomain` below. ![Action GET](screenshots/amazon/api_gateway_webhook_url.png)
 
 
 ## 7. Register webhook callback
