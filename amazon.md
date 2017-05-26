@@ -122,8 +122,6 @@ mbed notification is sent to the webhook, the data ends up in the database.
 1. In `Advanced Settings`, choose the VPC that RDS was created in, and add all the subnets.
 1. `default` security group
 
-**TODO**: add a screenshot here of the finished Lambda function screen
-
 ## 6. Configure the API Gateway
 
 Here we set up the webhook API endpoint so that mbed connector will have a place
