@@ -174,7 +174,8 @@ Here we'll set up QuickSight to pull data from RDS and create a graph.
 1. Sign up for [QuickSight](https://quicksight.aws/)
 1. [Authorize](http://docs.aws.amazon.com/quicksight/latest/user/enabling-access-rds.html) connection from QuickSight to RDS
 1. On the QuickSight main page click the name of your RDS Instance, "tsdb" in this case: ![Actions](screenshots/amazon/quicksight_main.png)
-1. Enter the "username" and "password" for your RDS so that QuickSight may access it and click "Create data source". ![Actions](screenshots/amazon/quicksight_rds_setup.png)
+1. Enter the "username" and "password" for your RDS so that QuickSight may access it and click "Create data source".
+![Actions](screenshots/amazon/quicksight_rds_setup.png)
 1. Select "events", then click on "select"
 1. Select "Directly query your data", then click on "visualize"
 1. highlight “date” and “value”
