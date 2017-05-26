@@ -35,7 +35,7 @@ RDS is the database that will hold the time series data.
     * no-publicly-accessible
     * default VPC
     * database name: tsdb
-    * remember the hostname (such as "tsdb.abcdefghi.us-west-2.rds.amazonaws.com")
+    * remember the hostname (such as "tsdb.abcdefghi.us-west-2.rds.amazonaws.com").  It will be your RDS instance endpoint hostname.
 1. Click the "Create" button.
 1. After a few minutes your database is up and running: ![Actions](screenshots/amazon/rds_database_created.png)
    
@@ -87,7 +87,7 @@ Here you'll create the RDS schema for the data.
    ```
 1. In a terminal, run `mysql --defaults-file=rds.cnf` or on a mac: 
    ```
-   mysqlsh --sql -h tsdb.ctvalvkuu7dg.us-west-2.rds.amazonaws.com -P 3306 -u tsdbuser -p
+   mysqlsh --sql -h <RDS instance endpoint hostname> -P 3306 -u tsdbuser -p
    ```
 1. Including the semicolon at the end, type the command `use tsdb;`
     * output: `Database changed`
