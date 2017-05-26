@@ -80,7 +80,7 @@ Here you'll create the RDS schema for the data.
 1. Create a configuration file named `rds.cnf`
    ```
    [client]
-   host=<hostname or ip address of RDS instance>
+   host=<RDS instance endpoint hostname>
    port=3306
    user=tsdbuser
    password=<tsdb password>
