@@ -14,10 +14,10 @@ Identity and Access Management (IAM) lets you set secure access for your various
 1. Click "Roles".
 1. Click "Create new role".
 1. Under "AWS Service Role" look for "AWS Lambda" and click the "Select" button. 
-1. In the "Filter" field enter `AWSLambdaBasicExecutionRole` and click the checkbox. ![Actions](screenshots/amazon/attach_policy.png)
+1. In the "Filter" field enter `AWSLambdaBasicExecutionRole` and click the checkbox.
 1. Now in the "Filter" field enter `AWSLambdaVPCAccessExecutionRole` and click the checkbox.
 1. Click "Next step".
-1. In the "Role name" field enter `mbed_time_series_database`.
+1. In the "Role name" field enter `mbed_time_series_database`. ![Actions](screenshots/amazon/attached_policies.png)
 1. Click the "Create role" button.
 1. The screen should display: ![Actions](screenshots/amazon/aim_role_finish.png)
 
