@@ -141,7 +141,7 @@ Lastly, go back to the function and type this code in:
 **4.5** After typing the code in, click **</> Get function URL** and then **Copy**.
 You can now let the mbed Cloud know where to call you back when new data is available.
 
-Run this to register the webhook callback:
+Open a Linux (bash) terminal and run this to register the webhook callback:
 
 **4.5.1** Register the webhook callback URL:
 
