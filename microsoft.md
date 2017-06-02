@@ -10,6 +10,10 @@ Device --> mbed Cloud --> Microsoft Function (via webhook) --> Event Hub --> Eve
 
 *Note*: Some of the steps below will take a minute or two to execute after you click **Create**. Wait until that's done before proceeding to the next step.
 
+## Prerequisites
+
+Compile and flash (onto a K64F board) the _amended_ [mbed example client](http://github.com/CristianPrundeanuARM/exd-tsdb-mbed-client-connector), which sends notification data in JSON format as well.
+
 ## 1. Create a Time Series Insights instance
 
 <!-- TODO: short explanation of what each of these blocks is -->
@@ -155,9 +159,7 @@ Open a Linux (bash) terminal and run this to register the webhook callback:
        DEVICE_RESOURCE=alldata/0/json
        curl -s -H "Authorization: Bearer $MBED_ACCESS_KEY" -X PUT "https://api.connector.mbed.com/subscriptions/$DEVICE_ID/$DEVICE_RESOURCE/"
 
-_Note 1: This assumes you are running the [mbed example client](http://github.com/CristianPrundeanuARM/exd-tsdb-mbed-client-connector) which sends data updates in JSON format_.
-
-_Note 2: If you ever need to unsubscribe from data updates, you can do it by running:_
+_Note: If you ever need to unsubscribe from data updates, you can do it by running:_
 
        curl -s -H "Authorization: Bearer $MBED_ACCESS_KEY" -X DELETE "https://api.connector.mbed.com/subscriptions/$DEVICE_ID/$DEVICE_RESOURCE/"
 
