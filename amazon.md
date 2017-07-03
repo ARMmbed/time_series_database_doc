@@ -176,7 +176,7 @@ Here we'll set up QuickSight to pull data from RDS and create a graph.
 ![Actions](screenshots/amazon/quicksight_rds_setup.png)
 1. Select "events", then click on "select"
 1. Select "Directly query your data", then click on "visualize"
-1. highlight “date” and “value”
+1. highlight “ts” and “value”
 1. click the arrows next to “Field wells”
 1. X axis dropdown, aggregate by hour
 
