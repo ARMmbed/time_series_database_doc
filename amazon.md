@@ -32,7 +32,7 @@ RDS is the database that will hold the time series data.
 1. Specify settings: ![Actions](screenshots/amazon/rds_db_details.png)
 1. Click "Next Step"
 1. Specify advanced details: ![Actions](screenshots/amazon/rds_db_advanced_details.png)
-    * no-publicly-accessible
+    * publicly-accessible: Yes
     * default VPC
     * database name: tsdb
     * remember the hostname (such as "tsdb.abcdefghi.us-west-2.rds.amazonaws.com").  It will be your RDS instance endpoint hostname.
