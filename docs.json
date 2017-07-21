@@ -1,0 +1,11 @@
+[
+    {
+        "title": "Time Series Data for mbed Cloud",
+        "description": "This reference deployment shows how to store and graph time series data coming from your mbed device. By the end, you'll be able to see the number of button presses per hour coming from your mbed device.",
+        "slug": "time-series-database",
+        "type": "markdown",
+        "sources": [
+		{"type": "markdown", "url": "https://github.com/ARMmbed/time_series_database_doc/blob/master/README.md"}
+		]
+	}
+]
