@@ -1,8 +1,8 @@
-# Introduction
+## Introduction
 
 This reference deployment shows how to store and graph time series data coming from your mbed device.  By the end, you'll be able to see the number of button presses per hour coming from your mbed device.
 
-# mbed Device Setup
+## mbed Device Setup
 
 The steps here will use the mbed web-compiler. This will load an operating system onto your mbed device so that it can upload data every time a button is pressed. This uses version pre-1.0 of mbed connector.
 
