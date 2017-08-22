@@ -5,7 +5,7 @@
         "slug": "time-series-database",
         "type": "markdown",
         "sources": [
-		{"type": "markdown", "url": "https://github.com/ARMmbed/time_series_database_doc/blob/master/README.md"}
+		{"type": "markdown", "url": "https://github.com/ARMmbed/time_series_database_doc/blob/staging/README.md"}
 		]
 	}
 ]
