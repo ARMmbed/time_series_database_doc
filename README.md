@@ -1,3 +1,8 @@
+# End of Life
+
+This documentation has been end-of-lifed.  It will not be updated moving
+forward.
+
 # Introduction
 
 This reference deployment shows how to store and graph time series data coming from your mbed device.  By the end, you'll be able to see the number of button presses per hour coming from your mbed device.
